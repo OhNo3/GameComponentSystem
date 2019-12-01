@@ -1,6 +1,14 @@
 #include "MainProcess.h"
 #include "MainProcessManager.h"
 
+MainProcess::MainProcess()
+{
+}
+
+MainProcess::~MainProcess()
+{
+}
+
 //ƒƒCƒ“‚Å‚Ìˆ—“à—e
 //‹N“®
 void MainProcess::StartUp(void)

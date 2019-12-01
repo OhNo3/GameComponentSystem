@@ -3,7 +3,12 @@
 
 class MainProcessManager
 {
+private:
+	MainProcessManager();
+
 public:
+	~MainProcessManager();
+
 	//メインプロセス内でのふるまい
 	static void Init(void);
 	static void Uninit(void);
