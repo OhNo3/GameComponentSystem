@@ -2,11 +2,11 @@
 
 
 
-class MainProcess
+class GameProcess
 {
 public:
-	MainProcess();
-	~MainProcess();
+	GameProcess();
+	~GameProcess();
 
 public:
 	void StartUp(void);

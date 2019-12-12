@@ -1,13 +1,13 @@
 #pragma once
 
 
-class MainProcessManager
+class GameProcessManager
 {
 private:
-	MainProcessManager();
+	GameProcessManager();
 
 public:
-	~MainProcessManager();
+	~GameProcessManager();
 
 	//メインプロセス内でのふるまい
 	static void Init(void);

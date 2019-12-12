@@ -155,8 +155,8 @@
     <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObjectManager.cpp" />
     <ClCompile Include="Main.cpp" />
-    <ClCompile Include="MainProcess.cpp" />
-    <ClCompile Include="MainProcessManager.cpp" />
+    <ClCompile Include="GameProcess.cpp" />
+    <ClCompile Include="GameProcessManager.cpp" />
     <ClCompile Include="StdAfx.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,8 +164,8 @@
     <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObjectManager.h" />
     <ClInclude Include="Main.h" />
-    <ClInclude Include="MainProcess.h" />
-    <ClInclude Include="MainProcessManager.h" />
+    <ClInclude Include="GameProcess.h" />
+    <ClInclude Include="GameProcessManager.h" />
     <ClInclude Include="StdAfx.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
