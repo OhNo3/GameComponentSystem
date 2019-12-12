@@ -22,9 +22,9 @@ void GameProcess::Run(void)
 	//for (;;)
 	if(true)
 	{
-		GameProcessManager::Input();
+		GameProcessManager::ProcessInput();
 		GameProcessManager::Update();
-		GameProcessManager::Draw();
+		GameProcessManager::GenerateOutput();
 	}
 }
 

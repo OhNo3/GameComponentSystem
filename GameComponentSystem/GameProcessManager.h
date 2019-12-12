@@ -12,9 +12,9 @@ public:
 	//メインプロセス内でのふるまい
 	static void Init(void);
 	static void Uninit(void);
-	static void Input(void);
+	static void ProcessInput(void);
 	static void Update(void);
-	static void Draw(void);
+	static void GenerateOutput(void);
 private:
 
 };
