@@ -26,7 +26,7 @@ public:
 	class GameObject* GetOwner(void) { return mOwner; }
 
 
-private:
+protected:
 	class GameObject* mOwner;
 
 	int mUpdateOrder;
