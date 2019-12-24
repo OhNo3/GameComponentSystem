@@ -1,5 +1,5 @@
 #pragma once
-class Transform_2D
+class Transform
 {
 };
 
