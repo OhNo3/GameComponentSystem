@@ -5,6 +5,7 @@ class GameObject
 {
 public:
 	void AddComponent();
+
 	void RemoveComponent();
 
 

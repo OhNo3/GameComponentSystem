@@ -151,32 +151,35 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ActorComponent.cpp" />
+    <ClCompile Include="CameraComponent.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="DataLoad.cpp" />
-    <ClCompile Include="GameObject_3D.cpp" />
-    <ClCompile Include="GameObject_2D.cpp" />
-    <ClCompile Include="GameObjectManager.cpp" />
-    <ClCompile Include="GameObject_Undraw.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GameProcessManager.cpp" />
     <ClCompile Include="StdAfx.cpp" />
-    <ClCompile Include="Transform_2D.cpp" />
-    <ClCompile Include="Transform_3D.cpp" />
+    <ClCompile Include="Transform.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ActorComponent.h" />
+    <ClInclude Include="CameraComponent.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="DataLoad.h" />
-    <ClInclude Include="GameObject_3D.h" />
-    <ClInclude Include="GameObject_2D.h" />
-    <ClInclude Include="GameObjectManager.h" />
-    <ClInclude Include="GameObject_Undraw.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="UI.h" />
+    <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GameProcessManager.h" />
     <ClInclude Include="StdAfx.h" />
-    <ClInclude Include="Transform_2D.h" />
-    <ClInclude Include="Transform_3D.h" />
+    <ClInclude Include="Transform.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
