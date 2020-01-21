@@ -1,5 +1,8 @@
 #pragma once
 
+#include "StdAfx.h"
+#include ""
+
 class ComponentManager
 {
 private:
@@ -13,8 +16,13 @@ public:
 	static void ProcessInputAll(void);
 	static void UpdateAll(void);
 	static void GenerateOutputAll(void);
+	
+
+	
 
 private:
+	std::vector<class Component*> components_;
+
 
 };
 

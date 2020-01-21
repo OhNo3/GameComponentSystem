@@ -5,15 +5,15 @@
 class Component
 {
 public:
-	enum TypeID
+	enum OwnerTypeID
 	{
-		TComponent = 0,
-		TMoveComponent = 1,
+		OTComponent = 0,
+		OTMoveComponent = 1,
 
 		NUM_COMPONENT_TYPES
 	};
 
-	static const char* TypeNames[NUM_COMPONENT_TYPES];
+	static const char* OwnerTypeNames[NUM_COMPONENT_TYPES];
 
 	Component(class GameObject* gameObject, int updateOrder = 100);
 	
@@ -27,7 +27,7 @@ public:
 	class GameObject* GetOwner(void) { return mOwner; }
 	int GetUpdateOrder() const { return mUpdateOrder; }
 
-	virtual TypeID GetType() const = 0;
+	virtual OwnerTypeID GetType() const = 0;
 
 	// Load/Save
 	virtual void LoadProperties(void);

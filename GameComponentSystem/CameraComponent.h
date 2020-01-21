@@ -5,6 +5,8 @@ class CameraComponent : public Component
 {
 public:
 
+	void CallCamera();
+
 private:
 
 
