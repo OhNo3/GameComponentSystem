@@ -18,10 +18,10 @@ void ComponentManager::ProcessInputAll(void)
 
 void ComponentManager::UpdateAll(void)
 {
-	for (auto comp : components_)
-	{
+	//for (auto comp : components_)
+	//{
 
-	}
+	//}
 }
 
 void ComponentManager::GenerateOutputAll(void)
