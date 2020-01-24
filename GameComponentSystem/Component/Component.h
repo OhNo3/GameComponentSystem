@@ -5,21 +5,21 @@
 class Component
 {
 public:
-	enum OwnerTypeID
+	enum TypeID
 	{
-		OTComponent = 0,
-		OTMoveComponent = 1,
+		TComponent = 0,
+		TMoveComponent = 1,
 
 		NUM_COMPONENT_TYPES
 	};
 
-	static const char* OwnerTypeNames[NUM_COMPONENT_TYPES];
+	static const char* TypeNames[NUM_COMPONENT_TYPES];
 
 	Component(class GameObject* gameObject, int updateOrder = 100);
 	
 	virtual~Component(void);
 
-	virtual void Update(float deltaTime);
+	virtual void Update(float deltaTime) = 0;
 
 	virtual void ProcessInput(void) {}
 
@@ -27,7 +27,7 @@ public:
 	class GameObject* GetOwner(void) { return mOwner; }
 	int GetUpdateOrder() const { return mUpdateOrder; }
 
-	virtual OwnerTypeID GetType() const = 0;
+	virtual TypeID GetType() const = 0;
 
 	// Load/Save
 	virtual void LoadProperties(void);
@@ -45,7 +45,7 @@ public:
 
 protected:
 
-	class GameObject* mOwner;
+	class GameObject* mOwner; //é©ï™ÇÃèäóLé“
 
 	int mUpdateOrder;
 };

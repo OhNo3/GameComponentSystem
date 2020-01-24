@@ -7,6 +7,9 @@ public:
 
 	void CallCamera();
 
+	void Update(float deltaTime) override;
+
+
 private:
 
 

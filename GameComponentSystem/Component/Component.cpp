@@ -1,5 +1,5 @@
 #include "Component.h"
-#include "GameObject.h"
+#include "../GameObject/GameObject.h"
 
 
 const char* Component::TypeNames[NUM_COMPONENT_TYPES] = {

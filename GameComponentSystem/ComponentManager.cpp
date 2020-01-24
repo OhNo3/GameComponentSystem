@@ -1,5 +1,5 @@
 #include "ComponentManager.h"
-#include "Component.h"
+#include "Component/Component.h"
 
 void ComponentManager::InitAll(void)
 {

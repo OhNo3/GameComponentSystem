@@ -1,7 +1,7 @@
 #pragma once
 
 #include "StdAfx.h"
-#include ""
+#include "ComponentManager.h"
 
 class ComponentManager
 {
