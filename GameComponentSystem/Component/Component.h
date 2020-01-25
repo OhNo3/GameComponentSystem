@@ -5,6 +5,8 @@
 class Component
 {
 public:
+
+	//どのコンポーネントなのか
 	enum TypeID
 	{
 		TComponent = 0,
@@ -19,13 +21,12 @@ public:
 	
 	virtual~Component(void);
 
-	virtual void Update(float deltaTime) = 0;
-
-	virtual void ProcessInput(void) {}
+	virtual void Update(float deltaTime);
+	virtual void ProcessInput(void);
 
 
 	class GameObject* GetOwner(void) { return mOwner; }
-	int GetUpdateOrder() const { return mUpdateOrder; }
+	int GetUpdateOrder(void) const	 { return mUpdateOrder; }
 
 	virtual TypeID GetType() const = 0;
 
@@ -44,9 +45,7 @@ public:
 	}
 
 protected:
-
-	class GameObject* mOwner; //自分の所有者
-
+	class GameObject* mOwner; //自分(コンポーネント)の所有者
 	int mUpdateOrder;
 };
 

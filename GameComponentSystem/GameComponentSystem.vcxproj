@@ -155,9 +155,9 @@
     <ClCompile Include="Component\CameraComponent.cpp" />
     <ClCompile Include="Component\Component.cpp" />
     <ClCompile Include="DataLoad.cpp" />
-    <ClCompile Include="GameObject\GameObject.cpp" />
+    <ClCompile Include="GameObjectManager.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="GameObject\UI.cpp" />
-    <ClCompile Include="ComponentManager.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GameProcessManager.cpp" />
@@ -169,9 +169,9 @@
     <ClInclude Include="Component\CameraComponent.h" />
     <ClInclude Include="Component\Component.h" />
     <ClInclude Include="DataLoad.h" />
-    <ClInclude Include="GameObject\GameObject.h" />
+    <ClInclude Include="GameObjectManager.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="GameObject\UI.h" />
-    <ClInclude Include="ComponentManager.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GameProcessManager.h" />

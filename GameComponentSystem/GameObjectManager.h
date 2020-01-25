@@ -1,28 +1,24 @@
 #pragma once
-
 #include "StdAfx.h"
-#include "ComponentManager.h"
+#include "GameObject.h"
 
-class ComponentManager
+class GameObjectManager
 {
 private:
-	ComponentManager();
+	GameObjectManager();
 
 public:
-	~ComponentManager();
+	~GameObjectManager();
 
 	static void InitAll(void);
 	static void UninitAll(void);
 	static void ProcessInputAll(void);
 	static void UpdateAll(void);
 	static void GenerateOutputAll(void);
-	
-
-	
 
 private:
-	std::vector<class Component*> components_;
-
+	std::vector<GameObject*>  game_object_;
+	std::vector<GameObject*>  pending_game_object_;
 
 };
 
