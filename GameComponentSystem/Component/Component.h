@@ -9,11 +9,11 @@ public:
 	//どのコンポーネントなのか
 	enum ComponentTypeID
 	{
-		TComponent = 0,
-		TTransformComponent,
-		TColliderComponent,
-		TMoveComponent,
-		TActorComponent,
+		CT_Component = 0,
+		CT_TransformComponent,
+		CT_ColliderComponent,
+		CT_MoveComponent,
+		CT_ActorComponent,
 
 
 		NUM_COMPONENT_TYPES

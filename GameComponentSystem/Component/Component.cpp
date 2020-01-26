@@ -4,6 +4,8 @@
 
 const char* Component::ComponentTypeNames[NUM_COMPONENT_TYPES] = {
 	"Component",
+	"SpriteComponent",
+	"PirticleComponent",
 	"AudioComponent",
 
 };

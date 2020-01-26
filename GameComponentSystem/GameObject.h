@@ -9,9 +9,9 @@ class GameObject
 public:
 	enum GameObjectTypeID
 	{
-		TActor = 0,
-		TFollowObject,
-		TTargetObject,
+		GO_Actor = 0,
+		GO_Follow,
+		GO_Target,
 
 		NUM_GAMEOBJECT_TYPES
 	};
@@ -20,27 +20,34 @@ public:
 	
 	enum GameObjectState
 	{
-		GOActive = 0,
-		GOPaused,
-		GODead
+		GOState_Active = 0,
+		GOState_Paused,
+		GOState_Dead
 	};
 
-	GameObject();
+	GameObject(class GameObjectManager* gameObjectManager);
 	virtual ~GameObject(void);
 
 
 	void Update(float deltaTime);
 	void UpdateComponents(float deltaTime);
+	void UpdateGameObject(float deltaTime);
 
 	void AddComponent(class Component* component);
 	void RemoveComponent(class Component* component);
 
+	void SetGameObjectState(GameObjectState state) { game_object_state_ = state; };
+	GameObjectState GetGameObjectState(void) { return game_object_state_; }
+
 private:
+	//GameObjectの所有者
+	class GameObjectManager* game_object_manager_;
+
 	//GameObjectの状態
-	GameObjectState state_;
+	GameObjectState game_object_state_;
 
 	//所有コンポーネント
-	std::vector<Component*> component_;
+	std::vector<Component*> components_;
 
 };
 
