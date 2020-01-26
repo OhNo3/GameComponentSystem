@@ -7,7 +7,7 @@
 class GameObject
 {
 public:
-	enum TypeID
+	enum GameObjectTypeID
 	{
 		TActor = 0,
 		TFollowObject,
@@ -16,9 +16,9 @@ public:
 		NUM_GAMEOBJECT_TYPES
 	};
 
-	static const char* TypeNames[NUM_GAMEOBJECT_TYPES];
+	static const char* GameObjectTypeNames[NUM_GAMEOBJECT_TYPES];
 	
-	enum GOState
+	enum GameObjectState
 	{
 		GOActive = 0,
 		GOPaused,
@@ -37,7 +37,7 @@ public:
 
 private:
 	//GameObjectの状態
-	GOState state_;
+	GameObjectState state_;
 
 	//所有コンポーネント
 	std::vector<Component*> component_;

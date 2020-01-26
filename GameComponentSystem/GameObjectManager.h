@@ -4,17 +4,22 @@
 
 class GameObjectManager
 {
-private:
-	GameObjectManager();
-
 public:
+	GameObjectManager();
 	~GameObjectManager();
 
-	static void InitAll(void);
-	static void UninitAll(void);
-	static void ProcessInputAll(void);
-	static void UpdateAll(void);
-	static void GenerateOutputAll(void);
+	class GameObjectManager* Create(void)
+	{
+		return new GameObjectManager();
+	}
+
+	void InitAll(void);
+	void UninitAll(void);
+	void ProcessInputAll(void);
+	void UpdateAll(void);
+	void GenerateOutputAll(void);
+
+
 
 private:
 	std::vector<GameObject*>  game_object_;

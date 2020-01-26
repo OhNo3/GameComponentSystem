@@ -2,7 +2,7 @@
 #include "../GameObject.h"
 
 
-const char* Component::TypeNames[NUM_COMPONENT_TYPES] = {
+const char* Component::ComponentTypeNames[NUM_COMPONENT_TYPES] = {
 	"Component",
 	"AudioComponent",
 

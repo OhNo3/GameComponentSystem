@@ -7,15 +7,19 @@ class Component
 public:
 
 	//どのコンポーネントなのか
-	enum TypeID
+	enum ComponentTypeID
 	{
 		TComponent = 0,
-		TMoveComponent = 1,
+		TTransformComponent,
+		TColliderComponent,
+		TMoveComponent,
+		TActorComponent,
+
 
 		NUM_COMPONENT_TYPES
 	};
 
-	static const char* TypeNames[NUM_COMPONENT_TYPES];
+	static const char* ComponentTypeNames[NUM_COMPONENT_TYPES];
 
 	Component(class GameObject* gameObject, int updateOrder = 100);
 	
@@ -25,10 +29,10 @@ public:
 	virtual void ProcessInput(void);
 
 
-	class GameObject* GetOwner(void) { return mOwner; }
+	class GameObject* GetOwnerGameObject(void) { return mOwner; }
 	int GetUpdateOrder(void) const	 { return mUpdateOrder; }
 
-	virtual TypeID GetType() const = 0;
+	virtual ComponentTypeID GetComponentType() const = 0;
 
 	// Load/Save
 	virtual void LoadProperties(void);
