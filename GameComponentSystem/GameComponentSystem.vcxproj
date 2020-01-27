@@ -162,6 +162,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="GameProcess.cpp" />
     <ClCompile Include="GameProcessManager.cpp" />
+    <ClCompile Include="RenderComponent.cpp" />
     <ClCompile Include="StdAfx.cpp" />
     <ClCompile Include="Component\TransformComponent.cpp" />
   </ItemGroup>
@@ -177,6 +178,7 @@
     <ClInclude Include="Main.h" />
     <ClInclude Include="GameProcess.h" />
     <ClInclude Include="GameProcessManager.h" />
+    <ClInclude Include="RenderComponent.h" />
     <ClInclude Include="StdAfx.h" />
     <ClInclude Include="Component\TransformComponent.h" />
   </ItemGroup>
