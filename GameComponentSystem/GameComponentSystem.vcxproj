@@ -151,36 +151,36 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Component\ColliderComponent.cpp" />
-    <ClCompile Include="Component\ActorComponent.cpp" />
-    <ClCompile Include="Component\CameraComponent.cpp" />
-    <ClCompile Include="Component\Component.cpp" />
-    <ClCompile Include="DataLoad.cpp" />
-    <ClCompile Include="GameObjectManager.cpp" />
-    <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="GameObject\UI.cpp" />
-    <ClCompile Include="Main.cpp" />
-    <ClCompile Include="GameProcess.cpp" />
-    <ClCompile Include="GameProcessManager.cpp" />
-    <ClCompile Include="RenderComponent.cpp" />
-    <ClCompile Include="StdAfx.cpp" />
-    <ClCompile Include="Component\TransformComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\ColliderComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\ActorComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\CameraComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\Component.cpp" />
+    <ClCompile Include="SourceFiles\SubSystem\DataLoad.cpp" />
+    <ClCompile Include="SourceFiles\GameObjectManager.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\GameObject.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\UI.cpp" />
+    <ClCompile Include="SourceFiles\Main.cpp" />
+    <ClCompile Include="SourceFiles\GameProcess.cpp" />
+    <ClCompile Include="SourceFiles\GameProcessManager.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\RenderComponent.cpp" />
+    <ClCompile Include="SourceFiles\StdAfx.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\Component\TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Component\ColliderComponent.h" />
-    <ClInclude Include="Component\ActorComponent.h" />
-    <ClInclude Include="Component\CameraComponent.h" />
-    <ClInclude Include="Component\Component.h" />
-    <ClInclude Include="DataLoad.h" />
-    <ClInclude Include="GameObjectManager.h" />
-    <ClInclude Include="GameObject.h" />
-    <ClInclude Include="GameObject\UI.h" />
-    <ClInclude Include="Main.h" />
-    <ClInclude Include="GameProcess.h" />
-    <ClInclude Include="GameProcessManager.h" />
-    <ClInclude Include="RenderComponent.h" />
-    <ClInclude Include="StdAfx.h" />
-    <ClInclude Include="Component\TransformComponent.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\ColliderComponent.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\ActorComponent.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\CameraComponent.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\Component.h" />
+    <ClInclude Include="SourceFiles\SubSystem\DataLoad.h" />
+    <ClInclude Include="SourceFiles\GameObjectManager.h" />
+    <ClInclude Include="SourceFiles\GameObject\GameObject.h" />
+    <ClInclude Include="SourceFiles\GameObject\UI.h" />
+    <ClInclude Include="SourceFiles\Main.h" />
+    <ClInclude Include="SourceFiles\GameProcess.h" />
+    <ClInclude Include="SourceFiles\GameProcessManager.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\RenderComponent.h" />
+    <ClInclude Include="SourceFiles\StdAfx.h" />
+    <ClInclude Include="SourceFiles\GameObject\Component\TransformComponent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

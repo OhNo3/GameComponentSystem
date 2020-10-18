@@ -15,90 +15,90 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\ActorComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="StdAfx.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\CameraComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameProcess.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\ColliderComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameProcessManager.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\Component.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="DataLoad.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\TransformComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Component\ActorComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObject\UI.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Component\CameraComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObjectManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Component\Component.cpp">
+    <ClCompile Include="SourceFiles\GameProcess.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Component\TransformComponent.cpp">
+    <ClCompile Include="SourceFiles\GameProcessManager.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject\UI.cpp">
+    <ClCompile Include="SourceFiles\Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
+    <ClCompile Include="SourceFiles\StdAfx.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="GameObjectManager.cpp">
+    <ClCompile Include="SourceFiles\SubSystem\DataLoad.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Component\ColliderComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObject\GameObject.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="RenderComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObject\Component\RenderComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Main.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\ActorComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="StdAfx.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\CameraComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameProcess.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\ColliderComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameProcessManager.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\Component.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="DataLoad.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\TransformComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Component\ActorComponent.h">
+    <ClInclude Include="SourceFiles\GameObject\UI.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Component\CameraComponent.h">
+    <ClInclude Include="SourceFiles\GameObjectManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Component\Component.h">
+    <ClInclude Include="SourceFiles\GameProcess.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Component\TransformComponent.h">
+    <ClInclude Include="SourceFiles\GameProcessManager.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject\UI.h">
+    <ClInclude Include="SourceFiles\Main.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameObjectManager.h">
+    <ClInclude Include="SourceFiles\StdAfx.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
+    <ClInclude Include="SourceFiles\SubSystem\DataLoad.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="Component\ColliderComponent.h">
+    <ClInclude Include="SourceFiles\GameObject\GameObject.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="RenderComponent.h">
+    <ClInclude Include="SourceFiles\GameObject\Component\RenderComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "StdAfx.h"
+#include "../StdAfx.h"
 #include "Component/Component.h"
 #include "Component/TransformComponent.h"
 

@@ -1,6 +1,6 @@
 #include "GameObject.h"
-#include "GameObjectManager.h"
-#include "StdAfx.h"
+#include "../GameObjectManager.h"
+#include "../StdAfx.h"
 
 
 

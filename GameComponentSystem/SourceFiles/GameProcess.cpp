@@ -19,12 +19,12 @@ void GameProcess::StartUp(void)
 //é¿çs
 void GameProcess::Run(void)
 {
-	//for (;;)
-	if(true)
+	for (;;)
 	{
 		GameProcessManager::ProcessInput();
 		GameProcessManager::Update();
 		GameProcessManager::GenerateOutput();
+		if (true) { break; }
 	}
 }
 
