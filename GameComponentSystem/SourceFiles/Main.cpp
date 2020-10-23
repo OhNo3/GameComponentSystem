@@ -1,4 +1,4 @@
-﻿
+﻿#include "StdAfx.h"
 #include "GameProcess.h"
 
 int main()

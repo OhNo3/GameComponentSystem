@@ -1,3 +1,4 @@
+#include "StdAfx.h"
 #include "GameProcess.h"
 #include "GameProcessManager.h"
 
@@ -19,10 +20,17 @@ void GameProcess::StartUp(void)
 //é¿çs
 void GameProcess::Run(void)
 {
+	float deltaTime;
+
 	for (;;)
 	{
+		if (true)
+		{
+			deltaTime = 1.f / 60.f;
+		}
+
 		GameProcessManager::ProcessInput();
-		GameProcessManager::Update();
+		GameProcessManager::Update(deltaTime);
 		GameProcessManager::GenerateOutput();
 		if (true) { break; }
 	}

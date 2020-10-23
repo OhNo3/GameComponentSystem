@@ -1,7 +1,5 @@
 #pragma once
 
-#include "GameObjectManager.h"
-
 class GameProcessManager
 {
 private:
@@ -14,7 +12,7 @@ public:
 	static void Init(void);
 	static void Uninit(void);
 	static void ProcessInput(void);
-	static void Update(void);
+	static void Update(float deltaTime);
 	static void GenerateOutput(void);
 private:
 	static class GameObjectManager* game_object_manager_;

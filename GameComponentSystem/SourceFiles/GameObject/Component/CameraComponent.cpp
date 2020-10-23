@@ -1,5 +1,5 @@
-#include "CameraComponent.h"
 #include "../../StdAfx.h"
+#include "CameraComponent.h"
 
 void CameraComponent::CallCamera()
 {

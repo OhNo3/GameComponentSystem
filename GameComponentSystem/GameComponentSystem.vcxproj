@@ -30,14 +30,14 @@
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
@@ -84,13 +84,15 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>StdAfx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -114,8 +116,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <PrecompiledHeader>
-      </PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -123,6 +124,9 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeaderFile>StdAfx.h</PrecompiledHeaderFile>
+      <ForcedIncludeFiles>StdAfx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="SourceFiles\GameObject\BackGroundObject.cpp" />
     <ClCompile Include="SourceFiles\GameObject\Component\ColliderComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObject\Component\ActorComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObject\Component\CameraComponent.cpp" />
@@ -158,15 +163,19 @@
     <ClCompile Include="SourceFiles\SubSystem\DataLoad.cpp" />
     <ClCompile Include="SourceFiles\GameObjectManager.cpp" />
     <ClCompile Include="SourceFiles\GameObject\GameObject.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\UI.cpp" />
+    <ClCompile Include="SourceFiles\GameObject\UIObject.cpp" />
     <ClCompile Include="SourceFiles\Main.cpp" />
     <ClCompile Include="SourceFiles\GameProcess.cpp" />
     <ClCompile Include="SourceFiles\GameProcessManager.cpp" />
     <ClCompile Include="SourceFiles\GameObject\Component\RenderComponent.cpp" />
-    <ClCompile Include="SourceFiles\StdAfx.cpp" />
+    <ClCompile Include="SourceFiles\StdAfx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="SourceFiles\GameObject\Component\TransformComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SourceFiles\GameObject\BackGroundObject.h" />
     <ClInclude Include="SourceFiles\GameObject\Component\ColliderComponent.h" />
     <ClInclude Include="SourceFiles\GameObject\Component\ActorComponent.h" />
     <ClInclude Include="SourceFiles\GameObject\Component\CameraComponent.h" />
@@ -174,13 +183,17 @@
     <ClInclude Include="SourceFiles\SubSystem\DataLoad.h" />
     <ClInclude Include="SourceFiles\GameObjectManager.h" />
     <ClInclude Include="SourceFiles\GameObject\GameObject.h" />
-    <ClInclude Include="SourceFiles\GameObject\UI.h" />
+    <ClInclude Include="SourceFiles\GameObject\UIObject.h" />
     <ClInclude Include="SourceFiles\Main.h" />
     <ClInclude Include="SourceFiles\GameProcess.h" />
     <ClInclude Include="SourceFiles\GameProcessManager.h" />
     <ClInclude Include="SourceFiles\GameObject\Component\RenderComponent.h" />
     <ClInclude Include="SourceFiles\StdAfx.h" />
     <ClInclude Include="SourceFiles\GameObject\Component\TransformComponent.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="CommentTemp\ソースtemp.txt" />
+    <Text Include="CommentTemp\ヘッダtemp.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

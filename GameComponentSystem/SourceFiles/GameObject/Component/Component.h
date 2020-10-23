@@ -1,7 +1,23 @@
-#pragma once
+/*=============================================================================
+/*-----------------------------------------------------------------------------
+/*	[Component.h] コンポーネントのベースクラス
+/*	Author：Kousuke,Ohno.
+/*-----------------------------------------------------------------------------
+/*	説明：
+=============================================================================*/
+#ifndef COMPONENT_H_
+#define	COMPONENT_H_
+
+/*--- インクルードファイル ---*/
+
+/*--- 構造体定義 ---*/
+
+/*--- クラスの前方宣言 ---*/
 
 
-
+/*-------------------------------------
+/* クラス
+-------------------------------------*/
 class Component
 {
 public:
@@ -38,7 +54,6 @@ public:
 	virtual void LoadProperties(void);
 	virtual void SaveProperties(void);
 
-
 	//virtual void LoadProperties(const rapidjson::Value& inObj);
 	//virtual void SaveProperties(rapidjson::Document::AllocatorType& alloc,
 	//	rapidjson::Value& inObj) const;
@@ -53,3 +68,7 @@ protected:
 	int mUpdateOrder;
 };
 
+#endif //COMPONENT_H_
+/*=============================================================================
+/*		End of File
+=============================================================================*/

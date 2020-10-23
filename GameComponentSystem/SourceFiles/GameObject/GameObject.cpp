@@ -1,33 +1,58 @@
-#include "GameObject.h"
-#include "../GameObjectManager.h"
 #include "../StdAfx.h"
-
+#include "../GameObjectManager.h"
+#include "GameObject.h"
+#include "Component/Component.h"
+#include "Component/TransformComponent.h"
 
 
 GameObject::GameObject(class GameObjectManager* gameObjectManager)
 	: game_object_manager_(gameObjectManager)
-	, game_object_state_(GOState_Active)
+	, game_object_state_(Active)
+	, transform_component_(new TransformComponent())
+	, re_compute_transform_(true)
 {
+	//ゲームオブジェクトを管理先へ追加
+	game_object_manager_->AddGameObject(this);
+
+	//ゲームオブジェクトの初期化
+	this->Init();
 }
 
 GameObject::~GameObject(void)
 {
+	this->Uninit();
+
+	game_object_manager_->RemoveGameObject(this);
+}
+  
+void GameObject::Init(void)
+{
+	
+}
+
+void GameObject::Uninit(void)
+{
+	//姿勢情報の破棄
+	delete transform_component_;
+
+	//コンポーネントの破棄
+	while (!components_.empty())
+	{
+		delete components_.back();
+	}
 }
 
 void GameObject::Update(float deltaTime)
 {
-
-
 	UpdateComponents(deltaTime);
 	UpdateGameObject(deltaTime);
-
 }
 
 void GameObject::UpdateComponents(float deltaTime)
 {
-	for (auto component : components_)
+	for (auto components : components_)
 	{
-		component->Update(deltaTime);
+		components->Update(deltaTime);
 	}
 }
 

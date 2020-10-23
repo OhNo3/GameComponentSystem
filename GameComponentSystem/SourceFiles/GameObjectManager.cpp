@@ -1,5 +1,5 @@
-#include "GameObjectManager.h"
 #include "StdAfx.h"
+#include "GameObjectManager.h"
 
 GameObjectManager::GameObjectManager()
 {
@@ -24,22 +24,30 @@ void GameObjectManager::ProcessInputAll(void)
 	std::cout << "ゲームオブジェクトの総入力\n";
 }
 
-void GameObjectManager::UpdateAll(void)
+void GameObjectManager::UpdateAll(float deltaTime)
 {
 	std::cout << "ゲームオブジェクトの総更新\n";
 
-	for (auto game_objects_all : game_object_)
+	for (auto game_objects_all : game_objects_)
 	{
-		game_objects_all->Update(16.0f);
+		game_objects_all->Update(deltaTime);
 	}
 
-	for (auto pending_game_objects_all : pending_game_object_)
+	for (auto pending_game_objects_all : pending_game_objects_) 
 	{
-
+		pending_game_objects_all->Update(deltaTime);
 	}
 }
 
 void GameObjectManager::GenerateOutputAll(void)
 {
 	std::cout << "ゲームオブジェクトの総出力化\n";
+}
+
+void GameObjectManager::AddGameObject(GameObject* gameObject)
+{
+}
+
+void GameObjectManager::RemoveGameObject(GameObject* gameObject)
+{
 }

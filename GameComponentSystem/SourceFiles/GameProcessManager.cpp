@@ -1,6 +1,6 @@
+#include "StdAfx.h"
 #include "GameProcessManager.h"
 #include "GameObjectManager.h"
-#include "StdAfx.h"
 
 //静的変数宣言
 GameObjectManager* GameProcessManager::game_object_manager_ = nullptr;
@@ -44,11 +44,11 @@ void GameProcessManager::ProcessInput(void)
 	std::cout << "\n";
 }
 
-void GameProcessManager::Update(void)
+void GameProcessManager::Update(float deltaTime)
 {
 	std::cout << "//////////更新処理の始まり//////////\n";
 	{
-		game_object_manager_->UpdateAll();
+		game_object_manager_->UpdateAll(deltaTime);
 	}
 	std::cout << "/*********更新処理の終わり*********/\n";
 	std::cout << "\n";
