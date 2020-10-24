@@ -26,7 +26,7 @@ void GameProcess::Run(void)
 	{
 		if (true)
 		{
-			deltaTime = 1.f / 60.f;
+			deltaTime = 1.f / 60.f; //1FPS == 0.016.....f
 		}
 
 		GameProcessManager::ProcessInput();
