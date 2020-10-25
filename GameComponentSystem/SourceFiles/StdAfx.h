@@ -11,7 +11,9 @@
 /*--- インクルードファイル ---*/
 #include <iostream>
 #include <vector>
-
+#include <list>
+#include <map>
+#include <unordered_map>
 
 
 /*--- 構造体定義 ---*/
