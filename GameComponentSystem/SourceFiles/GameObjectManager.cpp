@@ -1,5 +1,6 @@
 #include "StdAfx.h"
 #include "GameObjectManager.h"
+#include "GameObjects/GameObject.h"
 
 GameObjectManager::GameObjectManager()
 {

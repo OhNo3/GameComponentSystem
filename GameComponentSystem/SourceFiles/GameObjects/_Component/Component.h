@@ -3,7 +3,7 @@
 /*	[Component.h] コンポーネントのベースクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：
+/*	説明：コンポーネントのベースクラス
 =============================================================================*/
 #ifndef COMPONENT_H_
 #define	COMPONENT_H_
@@ -16,39 +16,38 @@
 
 
 /*-------------------------------------
-/* クラス
+/* コンポーネントのベースクラス
 -------------------------------------*/
 class Component
 {
 public:
-
-	//どのコンポーネントなのか
-	enum ComponentTypeID
+	enum class TypeID
 	{
-		CT_Component = 0,
-		CT_TransformComponent,
-		CT_ColliderComponent,
-		CT_MoveComponent,
-		CT_ActorComponent,
-
-
-		NUM_COMPONENT_TYPES
+		None = -1
+		, Component
+		, TransformComponent
+		, ColliderComponent
+		, MovementComponent
+		, ActorComponent
+		
+		, MAX
 	};
 
-	static const char* ComponentTypeNames[NUM_COMPONENT_TYPES];
+	static const char* ComponentTypeNames[static_cast<int>(TypeID::MAX)];
 
+public:
 	Component(class GameObject* gameObject, int updateOrder = 100);
-	
 	virtual~Component(void);
 
+	virtual void Init(void);
+	virtual void Uninit(void);
+	virtual void Input(void);
 	virtual void Update(float deltaTime);
-	virtual void ProcessInput(void);
 
+	class GameObject* GetOwnerGameObject(void) { return owner_game_object_; }
+	int GetUpdateOrder(void) const	 { return update_order_; }
 
-	class GameObject* GetOwnerGameObject(void) { return mOwner; }
-	int GetUpdateOrder(void) const	 { return mUpdateOrder; }
-
-	virtual ComponentTypeID GetComponentType() const = 0;
+	virtual TypeID GetComponentType() const = 0;
 
 	// Load/Save
 	virtual void LoadProperties(void);
@@ -64,8 +63,8 @@ public:
 	}
 
 protected:
-	class GameObject* mOwner; //自分(コンポーネント)の所有者
-	int mUpdateOrder;
+	class GameObject*	owner_game_object_;	//自分(コンポーネント)の所有者
+	int					update_order_;		//自分自身の更新順位
 };
 
 #endif //COMPONENT_H_

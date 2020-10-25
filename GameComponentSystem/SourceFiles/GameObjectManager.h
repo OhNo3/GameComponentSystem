@@ -1,6 +1,5 @@
 #pragma once
 #include "StdAfx.h"
-#include "GameObject/GameObject.h"
 
 class GameObjectManager
 {
@@ -23,7 +22,6 @@ public:
 	void RemoveGameObject(class GameObject* gameObject);
 
 private:
-	std::vector<GameObject*>  game_objects_;
-	std::vector<GameObject*>  pending_game_objects_;
+	std::vector<class GameObject*>  game_objects_;
+	std::vector<class GameObject*>  pending_game_objects_;
 };
-

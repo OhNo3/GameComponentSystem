@@ -1,6 +1,6 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[GameObject.h] モジュールヘッダ
+/*	[GameObject.h] ゲームオブジェクトのベースクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
 /*	説明：
@@ -17,39 +17,48 @@
 
 
 /*-------------------------------------
-/* クラス
+/* ゲームオブジェクトのベースクラス
 -------------------------------------*/
 class GameObject
 {
 public:
-	enum TypeID
-	{
-		ID_None = -1
-		, ID_Actor
-		, ID_Follow
-		, ID_Target
-
-		, MAX_TYPE_ID
-	};
-
-	static const char* GameObjectTypeNames[MAX_TYPE_ID];
-
-	enum State
+	enum class TypeID
 	{
 		None = -1
-		, Active
-		, Paused
-		, Dead
+		//自分自身
+		, GameObject
 
-		, MAX_STATE
+		//光源
+		, DirectionalLight
+
+		//アクター(独立した役割を持つゲームオブジェクト)
+		, Player
+		, Enemy
+
+		
+		, MAX		//ゲームオブジェクトのIDの最大値
 	};
 
+	//ゲームオブオブジェクトが所有する型のID
+	static const char* GameObjectTypeNames[static_cast<int>(TypeID::MAX)];
+
+	enum class State
+	{
+		None = -1
+		, Active	//活動するゲームオブジェクトか？
+		, Paused	//停止するゲームオブジェクトか？
+		, Dead		//死ぬゲームオブジェクトか？
+
+		, MAX		//状態の最大値
+	};
+
+public:
 	GameObject(class GameObjectManager* gameObjectManager);
 	virtual ~GameObject(void);
 
-
 	void Init(void);
 	void Uninit(void);
+	void Input(void); 
 	void Update(float deltaTime);
 	void UpdateComponents(float deltaTime);
 	void UpdateGameObject(float deltaTime);
@@ -57,30 +66,28 @@ public:
 	void AddComponent(class Component* component);
 	void RemoveComponent(class Component* component);
 
-	void SetGameObjectState(State state) { game_object_state_ = state; };
+	void SetGameObjectState(GameObject::State state) { game_object_state_ = state; };
 	State GetGameObjectState(void) { return game_object_state_; }
+
+	virtual TypeID GetType() const { return TypeID::GameObject; }
 
 	const std::vector<class Component*>& GetComponents() const { return components_; }
 
 private:
 	//GameObjectの所有者
-	class GameObjectManager* game_object_manager_;
+	class GameObjectManager*		game_object_manager_;
 
 	//GameObjectの状態
-	GameObject::State game_object_state_;
-
-	//ゲームオブジェクトの姿勢情報
-	class TransformComponent* transform_component_;
+	GameObject::State				game_object_state_;
 
 	//姿勢情報を再計算するか
-	bool re_compute_transform_;
+	bool							re_compute_transform_;
 
 	//所有コンポーネント
-	std::vector<class Component*> components_;
+	std::vector<class Component*>	components_;
 };
 
-
-#endif //_H_
+#endif //GAME_OBJECT_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

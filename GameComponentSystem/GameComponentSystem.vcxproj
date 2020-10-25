@@ -155,41 +155,53 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SourceFiles\GameObject\BackGroundObject.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\Component\ColliderComponent.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\Component\ActorComponent.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\Component\CameraComponent.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\Component\Component.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\BackGroundObject\SkyDome.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\BackGroundObject\SkyBox.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\HP.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\GameObject\Enemy.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\GameObject\Player.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\BackGroundObject.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\ColliderComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\ActorComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\CameraComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\Component.cpp" />
     <ClCompile Include="SourceFiles\SubSystem\DataLoad.cpp" />
     <ClCompile Include="SourceFiles\GameObjectManager.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\GameObject.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\UIObject.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\GameObject.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\UIObject.cpp" />
     <ClCompile Include="SourceFiles\Main.cpp" />
     <ClCompile Include="SourceFiles\GameProcess.cpp" />
     <ClCompile Include="SourceFiles\GameProcessManager.cpp" />
-    <ClCompile Include="SourceFiles\GameObject\Component\RenderComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\RenderComponent.cpp" />
     <ClCompile Include="SourceFiles\StdAfx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObject\Component\TransformComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\_Component\TransformComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\Stamina.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SourceFiles\GameObject\BackGroundObject.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\ColliderComponent.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\ActorComponent.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\CameraComponent.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\Component.h" />
+    <ClInclude Include="SourceFiles\GameObjects\BackGroundObject\SkyDome.h" />
+    <ClInclude Include="SourceFiles\GameObjects\BackGroundObject\SkyBox.h" />
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\HP.h" />
+    <ClInclude Include="SourceFiles\GameObjects\GameObject\Enemy.h" />
+    <ClInclude Include="SourceFiles\GameObjects\GameObject\Player.h" />
+    <ClInclude Include="SourceFiles\GameObjects\BackGroundObject.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\ColliderComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\ActorComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\CameraComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\Component.h" />
     <ClInclude Include="SourceFiles\SubSystem\DataLoad.h" />
     <ClInclude Include="SourceFiles\GameObjectManager.h" />
-    <ClInclude Include="SourceFiles\GameObject\GameObject.h" />
-    <ClInclude Include="SourceFiles\GameObject\UIObject.h" />
+    <ClInclude Include="SourceFiles\GameObjects\GameObject.h" />
+    <ClInclude Include="SourceFiles\GameObjects\UIObject.h" />
     <ClInclude Include="SourceFiles\Main.h" />
     <ClInclude Include="SourceFiles\GameProcess.h" />
     <ClInclude Include="SourceFiles\GameProcessManager.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\RenderComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\RenderComponent.h" />
     <ClInclude Include="SourceFiles\StdAfx.h" />
-    <ClInclude Include="SourceFiles\GameObject\Component\TransformComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\_Component\TransformComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\Stamina.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="CommentTemp\ソースtemp.txt" />
