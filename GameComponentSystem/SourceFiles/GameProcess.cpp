@@ -9,12 +9,13 @@
 /*--- インクルードファイル ---*/
 #include "StdAfx.h"
 #include "GameProcess.h"
-#include "GameProcessManager.h"
+#include "GameManager.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
 GameProcess::GameProcess(void)
+	: game_manager_(nullptr)
 {
 }
 
@@ -30,7 +31,7 @@ GameProcess::~GameProcess(void)
 -----------------------------------------------------------------------------*/
 void GameProcess::StartUp(void)
 {
-	GameProcessManager::Init();
+	GameProcess::Init();
 }
 
 /*-----------------------------------------------------------------------------
@@ -47,9 +48,9 @@ void GameProcess::Run(void)
 			deltaTime = 1.f / 60.f; //1FPS == 0.016.....f
 		}
 
-		GameProcessManager::ProcessInput();
-		GameProcessManager::Update(deltaTime);
-		GameProcessManager::GenerateOutput();
+		GameProcess::ProcessInput();
+		GameProcess::Update(deltaTime);
+		GameProcess::GenerateOutput();
 		if (true) { break; }
 	}
 }
@@ -59,7 +60,74 @@ void GameProcess::Run(void)
 -----------------------------------------------------------------------------*/
 void GameProcess::ShutDown(void)
 {
-	GameProcessManager::Uninit();
+	GameProcess::Uninit();
+}
+
+/*-----------------------------------------------------------------------------
+/* 初期化処理
+-----------------------------------------------------------------------------*/
+void GameProcess::Init(void)
+{
+	std::cout << "//////////初期化処理の始まり//////////\n";
+	{
+		game_manager_ = game_manager_->Create();
+	}
+	std::cout << "/*********初期化処理の終わり*********/\n";
+	std::cout << "\n";
+}
+
+/*-----------------------------------------------------------------------------
+/* 終了化処理
+-----------------------------------------------------------------------------*/
+void GameProcess::Uninit(void)
+{
+	std::cout << "//////////終了化処理の始まり//////////\n";
+	{
+		game_manager_->UninitAll();
+
+		delete game_manager_;
+	}
+	std::cout << "/*********終了化処理の終わり*********/\n";
+	std::cout << "\n";
+}
+
+/*-----------------------------------------------------------------------------
+/* 入力処理
+-----------------------------------------------------------------------------*/
+void GameProcess::ProcessInput(void)
+{
+	std::cout << "//////////入力処理の始まり//////////\n";
+	{
+		game_manager_->ProcessInputAll();
+	}
+	std::cout << "/*********入力処理の終わり*********/\n";
+	std::cout << "\n";
+}
+
+/*-----------------------------------------------------------------------------
+/* 更新処理
+-----------------------------------------------------------------------------*/
+void GameProcess::Update(float deltaTime)
+{
+	std::cout << "//////////更新処理の始まり//////////\n";
+	{
+		game_manager_->UpdateAll(deltaTime);
+	}
+	std::cout << "/*********更新処理の終わり*********/\n";
+	std::cout << "\n";
+}
+
+/*-----------------------------------------------------------------------------
+/* 出力生成処理
+-----------------------------------------------------------------------------*/
+void GameProcess::GenerateOutput(void)
+{
+	std::cout << "//////////出力生成処理の始まり//////////\n";
+	{
+		game_manager_->GenerateOutputAll();
+	}
+	std::cout << "/*********出力生成処理の終わり*********/\n";
+	std::cout << "\n";
 }
 
 /*=============================================================================

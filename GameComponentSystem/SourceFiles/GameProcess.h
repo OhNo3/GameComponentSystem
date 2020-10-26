@@ -28,6 +28,17 @@ public:
 	void StartUp(void);
 	void Run(void);
 	void ShutDown(void);
+
+private:
+	void Init(void);
+	void Uninit(void);
+	void ProcessInput(void);
+	void Update(float deltaTime);
+	void GenerateOutput(void);
+
+private:
+	class GameManager* game_manager_;
+
 };
 
 #endif //GAME_PROCESS_H_
