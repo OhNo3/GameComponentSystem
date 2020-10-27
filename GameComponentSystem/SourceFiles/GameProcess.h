@@ -25,12 +25,12 @@ public:
 	~GameProcess(void);
 
 public:
-	void StartUp(void);
+	bool StartUp(void);
 	void Run(void);
 	void ShutDown(void);
 
 private:
-	void Init(void);
+	bool Init(void);
 	void Uninit(void);
 	void ProcessInput(void);
 	void Update(float deltaTime);

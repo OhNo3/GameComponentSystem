@@ -1,9 +1,9 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[GameManager.h] ゲームオブジェクトの管理モジュールヘッダ
+/*	[GameManager.h] ゲームの状態やオブジェクトの管理モジュールヘッダ
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：ゲームオブジェクトを管理するためのクラス
+/*	説明：ゲームの状態やオブジェクトを管理するためのクラス
 =============================================================================*/
 #ifndef GAME_MANAGER_H_
 #define	GAME_MANAGER_H_
@@ -46,7 +46,7 @@ public:
 
 	void InitAll(void);
 	void UninitAll(void);
-	void ProcessInputAll(void);
+	void InputAll(void);
 	void UpdateAll(float deltaTime);
 	void GenerateOutputAll(void);
 
@@ -64,12 +64,15 @@ public:
 	void RemoveUIObjects(class UIObject* uiObject);
 
 private:
-	//書くオブジェクトの更新
+	//各更新処理
 	void UpdateBackgroundObjects(float deltaTime);
 	void UpdateGameObjects(float deltaTime);
-	void UpdateUIObjects(float deltaTime);
+	void UpdateUIObjects(float deltaTime); 
 
 private:
+	//現在のゲームの状態
+	GameState game_state_;
+
 	//各オブジェクトが更新中かどうか？
 	bool updating_background_objects_;
 	bool updating_game_objects_;

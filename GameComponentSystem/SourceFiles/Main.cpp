@@ -16,16 +16,13 @@
 -----------------------------------------------------------------------------*/
 int main()
 {
-	//起動
-	GameProcess* game_process = new GameProcess();
-	game_process->StartUp();
+	GameProcess game_process;
+
+	game_process.StartUp();		//起動
 	{
-		//実行
-		game_process->Run();
+		game_process.Run();		//実行
 	}
-	//終了
-	game_process->ShutDown();
-	delete game_process;
+	game_process.ShutDown();	//終了
 }
 
 /*=============================================================================
