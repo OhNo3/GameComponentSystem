@@ -51,10 +51,6 @@ public:
 	void GenerateOutputAll(void);
 
 public:
-	//背景オブジェクトの追加と削除
-	void AddBackgroundObjects(class BackgroundObject* backgroundObject);
-	void RemoveBackgroundObjects(class BackgroundObject* backgroundObject);
-
 	//ゲームオブジェクトの追加と削除
 	void AddGameObject(class GameObject* gameObject);
 	void RemoveGameObject(class GameObject* gameObject);
@@ -65,7 +61,6 @@ public:
 
 private:
 	//各更新処理
-	void UpdateBackgroundObjects(float deltaTime);
 	void UpdateGameObjects(float deltaTime);
 	void UpdateUIObjects(float deltaTime); 
 
@@ -74,13 +69,8 @@ private:
 	GameState game_state_;
 
 	//各オブジェクトが更新中かどうか？
-	bool updating_background_objects_;
 	bool updating_game_objects_;
 	bool updating_ui_objects_;
-
-	//背景オブジェクト
-	std::vector<class BackgroundObject*>  background_objects_;
-	std::vector<class BackgroundObject*>  pending_background_objects_;
 
 	//ゲームオブジェクト
 	std::vector<class GameObject*>  game_objects_;
@@ -89,6 +79,9 @@ private:
 	//UIオブジェクト
 	std::vector<class UIObject*>  ui_objects_;
 	std::vector<class UIObject*>  pending_ui_objects_;
+
+private:
+	class Camera* camera_;
 };
 
 #endif //GAME_MANAGER_H_

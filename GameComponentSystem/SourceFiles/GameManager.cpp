@@ -10,14 +10,14 @@
 #include "StdAfx.h"
 #include "GameManager.h"
 #include "GameObjects/GameObject.h"
+#include "GameObjects/GameObject/Camera.h"
 
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
 GameManager::GameManager(void)
-	: updating_background_objects_(false)
-	, updating_game_objects_(false)
+	: updating_game_objects_(false)
 	, updating_ui_objects_(false)
 {
 	std::cout << "ゲームマネージャの起動\n";
@@ -43,6 +43,19 @@ void GameManager::InitAll(void)
 	//グラフィックスの立ち上げやセーブデータのロードなどを行う
 	std::cout << "グラフィックスの立ち上げ\n";
 	std::cout << "セーブデータのロード\n";
+
+	game_objects_.clear();
+	pending_game_objects_.clear();
+
+	std::cout << "ゲームオブジェクトの作成開始\n";
+	std::cout << "\n";
+
+	game_state_ = GameState::Gameplay;
+	camera_		= new Camera(this);
+
+	std::cout << "\n";
+	std::cout << "ゲームオブジェクトの作成終了\n";
+
 }
 
 /*-----------------------------------------------------------------------------
@@ -54,6 +67,8 @@ void GameManager::UninitAll(void)
 
 	std::cout << "セーブデータのアンロード\n";
 	std::cout << "グラフィックスの破棄\n";
+
+	delete camera_;
 }
 
 /*-----------------------------------------------------------------------------
@@ -82,14 +97,11 @@ void GameManager::UpdateAll(float deltaTime)
 
 	if (game_state_ == GameState::Gameplay)
 	{
-		//背景オブジェクトの更新
-		this->UpdateBackgroundObjects(deltaTime);
-
 		//ゲームオブジェクトの更新
 		this->UpdateGameObjects(deltaTime);
 		
 		//UIオブジェクトの更新
-		this->UpdateUIObjects(deltaTime);
+		//this->UpdateUIObjects(deltaTime);
 	}
 }
 
@@ -99,48 +111,6 @@ void GameManager::UpdateAll(float deltaTime)
 void GameManager::GenerateOutputAll(void)
 {
 	std::cout << "ゲームマネージャの出力化処理\n";
-}
-
-/*-----------------------------------------------------------------------------
-/* 背景オブジェクトの追加処理
------------------------------------------------------------------------------*/
-void GameManager::AddBackgroundObjects(BackgroundObject* backgroundObject)
-{
-	//ゲームオブジェクトの更新中かで登録先を変更
-	if (updating_background_objects_)
-	{
-		pending_background_objects_.emplace_back(backgroundObject);//待機コンテナ
-	}
-	else
-	{
-		background_objects_.emplace_back(backgroundObject);//稼働コンテナ
-	}
-}
-
-/*-----------------------------------------------------------------------------
-/* 背景オブジェクトの削除処理
------------------------------------------------------------------------------*/
-void GameManager::RemoveBackgroundObjects(BackgroundObject* backgroundObject)
-{
-	// 待機コンテナ
-	// "backgroundObject"をコンテナの中から探し出して破棄する
-	auto iter = std::find(pending_background_objects_.begin(), pending_background_objects_.end(), backgroundObject);
-	if (iter != pending_background_objects_.end())
-	{
-		//一致する"backgroundObject"をコンテナの末尾へ移動させ、メモリ自体を破棄する
-		std::iter_swap(iter, pending_background_objects_.end() - 1);
-		pending_background_objects_.pop_back();
-	}
-
-	// 稼働コンテナ
-	// "backgroundObject"をコンテナの中から探し出して破棄する
-	iter = std::find(background_objects_.begin(), background_objects_.end(), backgroundObject);
-	if (iter != background_objects_.end())
-	{
-		//一致する"backgroundObject"をコンテナの末尾へ移動させ、メモリ自体を破棄する
-		std::iter_swap(iter, background_objects_.end() - 1);
-		background_objects_.pop_back();
-	}
 }
 
 /*-----------------------------------------------------------------------------
@@ -224,44 +194,6 @@ void GameManager::RemoveUIObjects(UIObject* uiObject)
 		//一致する"uiObject"をコンテナの末尾へ移動させ、メモリ自体を破棄する
 		std::iter_swap(iter, ui_objects_.end() - 1);
 		ui_objects_.pop_back();
-	}
-}
-
-/*-----------------------------------------------------------------------------
-/* 背景オブジェクトの総更新処理
------------------------------------------------------------------------------*/
-void GameManager::UpdateBackgroundObjects(float deltaTime)
-{
-	//すべてのゲームオブジェクトの更新
-	updating_game_objects_ = true;
-	for (auto game_object : game_objects_)
-	{
-		game_object->Update(deltaTime);
-	}
-	updating_game_objects_ = false;
-
-	//待機リストのゲームオブジェクトの操作
-	for (auto pending_game_object : pending_game_objects_)
-	{
-		pending_game_object->Update(deltaTime);
-		game_objects_.emplace_back(pending_game_object);
-	}
-	pending_game_objects_.clear();
-
-	//ゲームオブジェクトが破棄の状態かチェック
-	std::vector<class GameObject*> dead_game_objects;
-	for (auto game_object : game_objects_)
-	{
-		if (game_object->GetState() == GameObject::State::Dead)
-		{
-			dead_game_objects.emplace_back(game_object);
-		}
-	}
-
-	//破棄予定のゲームオブジェクトのメモリを破棄
-	for (auto dead_game_object : dead_game_objects)
-	{
-		delete dead_game_object;
 	}
 }
 

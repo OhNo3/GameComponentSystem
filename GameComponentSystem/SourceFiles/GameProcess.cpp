@@ -32,6 +32,7 @@ GameProcess::~GameProcess(void)
 bool GameProcess::StartUp(void)
 {
 	std::cout << "............‹N“®\n";
+	std::cout << "\n";
 
 	//¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
 	 bool is_init_success;
@@ -47,6 +48,7 @@ bool GameProcess::StartUp(void)
 void GameProcess::Run(void)
 {
 	std::cout << "............ŽÀs\n";
+	std::cout << "\n";
 
 	float deltaTime;
 

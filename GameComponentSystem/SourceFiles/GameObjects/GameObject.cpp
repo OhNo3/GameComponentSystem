@@ -1,6 +1,6 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[Hoge.cpp] モジュール
+/*	[GameObject.cpp] 
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
 /*	説明：
@@ -8,23 +8,24 @@
 
 /*--- インクルードファイル ---*/
 #include "../StdAfx.h"
-#include "../GameObjectManager.h"
+#include "../GameManager.h"
 #include "GameObject.h"
-#include "_Component/Component.h"
-#include "_Component/TransformComponent.h"
-
-
+#include "Component.h"
+#include "Component/TransformComponent.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
-GameObject::GameObject(class GameObjectManager* gameObjectManager)
-	: game_object_manager_(gameObjectManager)
-	, game_object_state_(State::Active)
+GameObject::GameObject(class GameManager* gameManager)
+	: game_manager_(gameManager)
+	, state_(State::Active)
 	, re_compute_transform_(true)
 {
 	//ゲームオブジェクトを管理先へ追加
-	game_object_manager_->AddGameObject(this);
+	game_manager_->AddGameObject(this);
+
+	//姿勢制御コンポーネントの追加
+	transform_component_ = new TransformComponent(this);
 
 	//ゲームオブジェクトの初期化
 	this->Init();
@@ -37,7 +38,7 @@ GameObject::~GameObject(void)
 {
 	this->Uninit();
 
-	game_object_manager_->RemoveGameObject(this);
+	game_manager_->RemoveGameObject(this);
 }
 
 /*-----------------------------------------------------------------------------
@@ -65,6 +66,23 @@ void GameObject::Uninit(void)
 -----------------------------------------------------------------------------*/
 void GameObject::Input(void)
 {
+	//コンポーネントの入力処理
+
+	if (state_ == State::Active)
+	{
+		for (auto component : components_)
+		{
+			component->Input();
+		}
+		InputGameObject(); //サブクラスが、挙動をoverrideできるように
+	}
+}
+
+/*-----------------------------------------------------------------------------
+/* ゲームオブジェクトの入力処理:サブクラスが、挙動をoverrideできるように
+-----------------------------------------------------------------------------*/
+void GameObject::InputGameObject(void)
+{
 }
 
 /*-----------------------------------------------------------------------------
@@ -72,30 +90,53 @@ void GameObject::Input(void)
 -----------------------------------------------------------------------------*/
 void GameObject::Update(float deltaTime)
 {
-	UpdateComponents(deltaTime);
-	UpdateGameObject(deltaTime);
+	if (state_ == State::Active)
+	{
+		if (re_compute_transform_)
+		{
+			ComputeWorldTransform();
+		}
+		UpdateComponents(deltaTime);
+		UpdateGameObject(deltaTime);	//サブクラスが、挙動をoverrideできるように
+	}
 }
 
 /*-----------------------------------------------------------------------------
-/* 更新処理
+/* コンポーネントの更新処理
 -----------------------------------------------------------------------------*/
 void GameObject::UpdateComponents(float deltaTime)
 {
 	for (auto components : components_)
 	{
-		std::cout << "ゲームオブジェクトが更新された" << std::endl;
 		components->Update(deltaTime);
 	}
 }
 
 /*-----------------------------------------------------------------------------
-/* 更新処理
+/* ゲームオブジェクトの更新処理:サブクラスが、挙動をoverrideできるように
 -----------------------------------------------------------------------------*/
 void GameObject::UpdateGameObject(float deltaTime)
 {
-
 }
 
+/*-----------------------------------------------------------------------------
+/* 姿勢制御の更新
+-----------------------------------------------------------------------------*/
+void GameObject::ComputeWorldTransform()
+{
+	re_compute_transform_ = false;
+
+	//拡縮・回転・平行移動の情報を格納
+
+	for (auto components : components_)
+	{
+		components->OnUpdateWorldTransform();
+	}
+}
+
+/*-----------------------------------------------------------------------------
+/* コンポーネントの追加
+-----------------------------------------------------------------------------*/
 void GameObject::AddComponent(Component* component)
 {
 	int my_update_order = component->GetUpdateOrder();
@@ -116,6 +157,9 @@ void GameObject::AddComponent(Component* component)
 	components_.insert(iter, component);
 }
 
+/*-----------------------------------------------------------------------------
+/* コンポーネントの削除
+-----------------------------------------------------------------------------*/
 void GameObject::RemoveComponent(Component* component)
 {
 	auto iter = std::find(components_.begin()

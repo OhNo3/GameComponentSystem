@@ -3,7 +3,7 @@
 /*	[GameObject.h] ゲームオブジェクトのベースクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：
+/*	説明：このクラスから継承・派生させて
 =============================================================================*/
 #ifndef GAME_OBJECT_H_
 #define	GAME_OBJECT_H_
@@ -29,13 +29,13 @@ public:
 		, GameObject
 
 		//光源
-		, DirectionalLight
+		, DirectionalLight 
 
 		//アクター(独立した役割を持つゲームオブジェクト)
 		, Player
 		, Enemy
+		, Camera
 
-		
 		, MAX		//ゲームオブジェクトのIDの最大値
 	};
 
@@ -53,32 +53,39 @@ public:
 	};
 
 public:
-	GameObject(class GameObjectManager* gameObjectManager);
+	GameObject(class GameManager* gameManager);
 	virtual ~GameObject(void);
 
 	void Init(void);
 	void Uninit(void);
 	void Input(void); 
+	virtual void InputGameObject(void);	//後でoverrideできるように
 	void Update(float deltaTime);
 	void UpdateComponents(float deltaTime);
-	void UpdateGameObject(float deltaTime);
+	virtual void UpdateGameObject(float deltaTime);	//後でoverrideできるように
+
+	//姿勢情報の更新
+	void ComputeWorldTransform();
 
 	void AddComponent(class Component* component);
 	void RemoveComponent(class Component* component);
 
-	void SetGameObjectState(GameObject::State state) { game_object_state_ = state; };
-	State GetGameObjectState(void) { return game_object_state_; }
+	void SetState(State state) { state_ = state; };
+	State GetState(void) { return state_; }
 
-	virtual TypeID GetType() const { return TypeID::GameObject; }
+	virtual TypeID GetType(void) const { return TypeID::GameObject; } //後でoverrideできるように
 
 	const std::vector<class Component*>& GetComponents() const { return components_; }
 
 private:
 	//GameObjectの所有者
-	class GameObjectManager*		game_object_manager_;
+	class GameManager*				game_manager_;
 
 	//GameObjectの状態
-	GameObject::State				game_object_state_;
+	State							state_;
+
+	//姿勢制御コンポーネント
+	class TransformComponent*		transform_component_;
 
 	//姿勢情報を再計算するか
 	bool							re_compute_transform_;
