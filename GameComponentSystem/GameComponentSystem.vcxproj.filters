@@ -45,40 +45,7 @@
     <ClCompile Include="SourceFiles\GameObjects\GameObject\Camera.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\UIObject\HealthBar.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\UIObject\StaminaBar.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFiles\Renderer.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\GameObject\DirectionalLight.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\UIObject\GameScore.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent\HealthPointsComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent\StaminaPointsComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent\EnemyParamComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent\PlayerParamComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ArmComponent\FollowArmComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ArmComponent\SpringArmComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.cpp">
@@ -99,40 +66,13 @@
     <ClCompile Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent\SkyBoxComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent\SkyDomeComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkeletalMeshComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\StaticMeshComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\BoxComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\PlaneComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\SpriteComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ActorParamComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\ArmComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent.cpp">
@@ -159,13 +99,19 @@
     <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\DebugComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\HUD.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\WeaponComponent.cpp">
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\Result.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\GameObject\Bullet.cpp">
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\Title.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\GameObjects\UIObject\PauseMenu.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
@@ -200,40 +146,7 @@
     <ClInclude Include="SourceFiles\GameObjects\GameObject\Camera.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\UIObject\HealthBar.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\UIObject\StaminaBar.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceFiles\Renderer.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\GameObject\DirectionalLight.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\UIObject\GameScore.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent\HealthPointsComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent\StaminaPointsComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent\EnemyParamComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent\ParameterComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent\PlayerParamComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ArmComponent\FollowArmComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ArmComponent\SpringArmComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.h">
@@ -254,40 +167,13 @@
     <ClInclude Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent\SkyBoxComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent\SkyDomeComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkeletalMeshComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\SkyMeshComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent\StaticMeshComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\BoxComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\PlaneComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ActorParamComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\ArmComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent.h">
@@ -314,13 +200,19 @@
     <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\DebugComponent.h">
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\HUD.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\WeaponComponent.h">
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\Result.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\GameObject\Bullet.h">
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\Title.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceFiles\GameObjects\UIObject\PauseMenu.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,2 +1,2 @@
 #include "../../../StdAfx.h"
-#include "BoxComponent.h"
+#include "BGMComponent.h"
