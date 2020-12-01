@@ -22,13 +22,19 @@
 class SpriteComponent : public RenderComponent
 {
 public:
-	SpriteComponent(class GameObject* owner, int updateOrder = 100);
+	SpriteComponent(class GameObject* owner, int drawOrder = 100);
 	~SpriteComponent(void);
+
+	void SetObjectName(std::string objectName);
+	void Draw(void);
+
+	int GetDrawOrder(void) { return draw_order_; }
 
 	TypeID GetComponentType(void) const override { return TypeID::SpriteComponent; }
 
-private:
 protected:
+	int			draw_order_;
+	std::string object_name_;
 };
 
 

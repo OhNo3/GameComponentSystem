@@ -25,9 +25,12 @@ public:
 	Player(class GameManager* gameManager);
 	~Player(void);
 
+	void UpdateGameObject(float deltaTime) override;
+
 	TypeID GetType(void) const override { return TypeID::Player; }
 
 private:
+	class SpriteComponent* sprite_;
 
 
 };

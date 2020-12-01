@@ -25,6 +25,8 @@ public:
 	Camera(class GameManager* gameManager);
 	~Camera(void);
 
+	void UpdateGameObject(float deltaTime) override;
+
 	virtual TypeID GetType(void) const { return TypeID::Camera; }
 
 

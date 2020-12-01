@@ -32,9 +32,9 @@ public:
 		, DirectionalLight 
 
 		//アクター(独立した役割を持つゲームオブジェクト)
+		, Camera
 		, Player
 		, Enemy
-		, Camera
 
 		, MAX		//ゲームオブジェクトのIDの最大値
 	};
@@ -76,6 +76,9 @@ public:
 	virtual TypeID GetType(void) const { return TypeID::GameObject; } //後でoverrideできるように
 
 	const std::vector<class Component*>& GetComponents() const { return components_; }
+
+	class GameManager* GetGameManager(void) { return game_manager_; }
+
 
 private:
 	//GameObjectの所有者

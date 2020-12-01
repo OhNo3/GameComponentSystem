@@ -50,19 +50,18 @@ public:
 	void UpdateAll(float deltaTime);
 	void GenerateOutputAll(void);
 
+
+	class Renderer* GetRenderer(void) { return renderer_; }
+
+
 public:
 	//ゲームオブジェクトの追加と削除
 	void AddGameObject(class GameObject* gameObject);
 	void RemoveGameObject(class GameObject* gameObject);
 
-	//UIオブジェクトの追加と削除
-	void AddUIObjects(class UIObject* uiObject);
-	void RemoveUIObjects(class UIObject* uiObject);
-
 private:
 	//各更新処理
 	void UpdateGameObjects(float deltaTime);
-	void UpdateUIObjects(float deltaTime); 
 
 private:
 	//現在のゲームの状態
@@ -70,18 +69,17 @@ private:
 
 	//各オブジェクトが更新中かどうか？
 	bool updating_game_objects_;
-	bool updating_ui_objects_;
 
 	//ゲームオブジェクト
 	std::vector<class GameObject*>  game_objects_;
 	std::vector<class GameObject*>  pending_game_objects_;
 
-	//UIオブジェクト
-	std::vector<class UIObject*>  ui_objects_;
-	std::vector<class UIObject*>  pending_ui_objects_;
-
 private:
-	class Camera* camera_;
+	class Renderer* renderer_;
+	class Camera*	camera_;
+	class Player*	player_;
+	class Enemy*	enemy_;
+
 };
 
 #endif //GAME_MANAGER_H_

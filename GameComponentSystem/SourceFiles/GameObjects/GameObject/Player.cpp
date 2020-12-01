@@ -9,6 +9,7 @@
 /*--- インクルードファイル ---*/
 #include "../../StdAfx.h"
 #include "Player.h"
+#include "../Component/RenderComponent/SpriteComponent.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
@@ -17,6 +18,8 @@ Player::Player(GameManager* gameManager)
 	:GameObject(gameManager)
 {
 
+	sprite_ = new SpriteComponent(this);
+	sprite_->SetObjectName("プレイヤーオブジェクト");
 }
 
 /*-----------------------------------------------------------------------------
@@ -24,6 +27,11 @@ Player::Player(GameManager* gameManager)
 -----------------------------------------------------------------------------*/
 Player::~Player(void)
 {
+}
+
+void Player::UpdateGameObject(float deltaTime)
+{
+	std::cout << "プレイヤーのゲームオブジェクトが更新された\n";
 }
 
 
