@@ -30,6 +30,7 @@ Camera::Camera(class GameManager* gameManager)
 -----------------------------------------------------------------------------*/
 Camera::~Camera(void)
 {
+	std::cout << "カメラのゲームオブジェクトの破棄\n";
 }
 
 void Camera::UpdateGameObject(float deltaTime)

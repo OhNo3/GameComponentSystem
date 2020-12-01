@@ -17,9 +17,11 @@
 Player::Player(GameManager* gameManager)
 	:GameObject(gameManager)
 {
+	std::cout << "プレイヤーのゲームオブジェクトの作成\n";
 
 	sprite_ = new SpriteComponent(this);
 	sprite_->SetObjectName("プレイヤーオブジェクト");
+
 }
 
 /*-----------------------------------------------------------------------------
@@ -27,6 +29,7 @@ Player::Player(GameManager* gameManager)
 -----------------------------------------------------------------------------*/
 Player::~Player(void)
 {
+	std::cout << "プレイヤーのゲームオブジェクトの破棄\n";
 }
 
 void Player::UpdateGameObject(float deltaTime)
