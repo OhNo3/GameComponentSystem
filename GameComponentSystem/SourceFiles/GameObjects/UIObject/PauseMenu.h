@@ -1,10 +1,11 @@
 #pragma once
+
+
 #include "../UIObject.h"
 
-class HealthBar : public UIObject
+class PauseMenu : public UIObject
 {
 public:
-
 private:
 };
 

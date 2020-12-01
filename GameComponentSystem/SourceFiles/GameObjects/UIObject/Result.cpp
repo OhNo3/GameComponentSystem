@@ -1,2 +1,2 @@
 #include "../../StdAfx.h"
-#include "GameScore.h"
+#include "Result.h"

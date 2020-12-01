@@ -1,7 +1,10 @@
 #pragma once
+
+
+
 #include "../UIObject.h"
 
-class GameScore : public UIObject
+class Title : public UIObject
 {
 public:
 private:
