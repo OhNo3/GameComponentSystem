@@ -11,6 +11,7 @@
 #include "GameManager.h"
 #include "Renderer.h"
 #include "GameObjects/GameObject.h"
+#include "GameObjects/UIObject.h"
 #include "GameObjects/GameObject/Camera.h"
 #include "GameObjects/GameObject/Player.h"
 #include "GameObjects/GameObject/Enemy.h"
@@ -112,7 +113,7 @@ void GameManager::UpdateAll(float deltaTime)
 		this->UpdateGameObjects(deltaTime);
 		
 		//UIオブジェクトの更新
-		//this->UpdateUIObjects(deltaTime);
+		this->UpdateUIObjects(deltaTime);
 	}
 }
 
@@ -169,6 +170,14 @@ void GameManager::RemoveGameObject(GameObject* gameObject)
 }
 
 /*-----------------------------------------------------------------------------
+/* UIオブジェクトの追加処理
+-----------------------------------------------------------------------------*/
+void GameManager::PushUIObject(UIObject* uiObject)
+{
+	ui_objects_.emplace_back(uiObject);
+}
+
+/*-----------------------------------------------------------------------------
 /* ゲームオブジェクトの総更新処理
 -----------------------------------------------------------------------------*/
 void GameManager::UpdateGameObjects(float deltaTime)
@@ -203,6 +212,35 @@ void GameManager::UpdateGameObjects(float deltaTime)
 	for (auto dead_game_object : dead_game_objects)
 	{
 		delete dead_game_object;
+	}
+}
+
+/*-----------------------------------------------------------------------------
+/* ゲームオブジェクトの総更新処理
+-----------------------------------------------------------------------------*/
+void GameManager::UpdateUIObjects(float deltaTime)
+{
+	//UIオブジェクトの総更新
+	for (auto ui : ui_objects_)
+	{
+		if (ui->GetState() == UIObject::State::Active)
+		{
+			ui->Update(deltaTime);
+		}
+	}
+	//UIオブジェクトを削除するかどうか
+	auto iter = ui_objects_.begin();
+	while (iter != ui_objects_.end())
+	{
+		if ((*iter)->GetState() == UIObject::State::Closing)
+		{
+			delete* iter;
+			iter = ui_objects_.erase(iter);
+		}
+		else
+		{
+			++iter;
+		}
 	}
 }
 

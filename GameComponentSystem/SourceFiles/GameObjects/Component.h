@@ -26,22 +26,13 @@ public:
 		None = -1
 		//ベースクラス
 		, Component
-		
-		//キャラクター
-		, ActorParamComponent
-		, PlayerParamComponent
-		, EnemyParamComponent
-		//パラメーター値
-		, ParameterComponent
-		, HealthPointsComponent
-		, StaminaPointsComponent
-		//アーム
-		, ArmComponent
-		, FollowArmComponent
-		, SpringArmComponent
+
 		//AI
-		, BehaviorComponent
-		, EnemyBehaviorComponent
+		, AIComponent
+		, EnemyAIComponent
+		//音声
+		, AudioComponent
+		, BGMCompoenent
 		//カメラ
 		, CameraComponent
 		, FollowCameraComponent
@@ -56,23 +47,10 @@ public:
 		//レンダリング(形として出力)するオブジェクト
 		, RenderComponent
 		, SpriteComponent
-		, MeshComponent
-		, StaticMeshComponent
-		, SkeletalMeshComponent
 		//姿勢制御と移動
 		, TransformComponent
 		, MoveComponent 
 		
-		//, AudioComponent
-		//, DebugComponent
-		//, WeaponComponent
-		//空のコンポーネント
-		//, SkyComponent
-		//, SkyDomeComponent
-		//, SkyBoxComponent
-
-
-
 		//コンポーネントの最大値
 		, MAX
 	};

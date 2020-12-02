@@ -3,7 +3,7 @@
 /*	[Component.cpp] コンポーネントのベースクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：
+/*	説明：コンポーネントのベースクラスの処理を定義
 =============================================================================*/
 
 /*--- インクルードファイル ---*/
@@ -12,12 +12,31 @@
 
 //コンポーネントのリスト
 const char* Component::ComponentTypeNames[static_cast<int>(TypeID::MAX)] = {
+	//自分自身
 	"Component"
-
-	, "TransformComponent"
-	, "PirticleComponent"
+	//AI
+	, "AIComponent"
+	, "EnemyAIComponent"
+	//音声
 	, "AudioComponent"
+	, "BGMCompoenent"
+	//カメラ
+	, "CameraComponent"
+	, "FollowCameraComponent"
+	//衝突判定
+	, "ColliderComponent"
+	, "SphereColliderComponent"
+	, "CapsuleColliderComponent"
+	//入力
+	, "InputComponent"
+	, "PlayerInputComponent"
+	, "AutomaticInputComponent"
+	//レンダリング(形として出力)するオブジェクト
+	, "RenderComponent"
 	, "SpriteComponent"
+	//姿勢制御と移動
+	, "TransformComponent"
+	, "MoveComponent"
 };
 
 /*-----------------------------------------------------------------------------

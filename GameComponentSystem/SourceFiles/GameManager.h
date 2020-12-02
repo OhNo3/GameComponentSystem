@@ -59,9 +59,13 @@ public:
 	void AddGameObject(class GameObject* gameObject);
 	void RemoveGameObject(class GameObject* gameObject);
 
+	//UIオブジェクトの追加処理
+	void PushUIObject(class UIObject* uiObject);
+
 private:
 	//各更新処理
 	void UpdateGameObjects(float deltaTime);
+	void UpdateUIObjects(float deltaTime);
 
 private:
 	//現在のゲームの状態
@@ -73,6 +77,9 @@ private:
 	//ゲームオブジェクト
 	std::vector<class GameObject*>  game_objects_;
 	std::vector<class GameObject*>  pending_game_objects_;
+
+	//UIオブジェクト
+	std::vector<class UIObject*>  ui_objects_;
 
 private:
 	class Renderer* renderer_;
