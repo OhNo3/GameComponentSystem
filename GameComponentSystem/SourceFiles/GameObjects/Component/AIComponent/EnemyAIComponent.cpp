@@ -1,27 +1,27 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[EnemyBehaviorComponent.cpp] 敵AIビヘイビアのコンポーネント
+/*	[EnemyAIComponent.cpp] 敵AIのコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：敵AIビヘイビアコンポーネントの処理を定義
+/*	説明：敵AIコンポーネントの処理を定義
 =============================================================================*/
 
 /*--- インクルードファイル ---*/
 #include "../../../StdAfx.h"
-#include "EnemyBehaviorComponent.h"
+#include "EnemyAIComponent.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
-EnemyBehaviorComponent::EnemyBehaviorComponent(GameObject* owner, int updateOrder)
-	: BehaviorComponent(owner, updateOrder)
+EnemyAIComponent::EnemyAIComponent(GameObject* owner, int updateOrder)
+	: AIComponent(owner, updateOrder)
 {
 }
 
 /*-----------------------------------------------------------------------------
 /* デストラクタ
 -----------------------------------------------------------------------------*/
-EnemyBehaviorComponent::~EnemyBehaviorComponent(void)
+EnemyAIComponent::~EnemyAIComponent(void)
 {
 }
 

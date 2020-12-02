@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[EnemyBehaviorComponent.h]  敵AIビヘイビアのコンポーネント
+/*	[EnemyAIComponent.h]  敵AIのコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：敵AIビヘイビアコンポーネントのクラス定義
+/*	説明：敵AIコンポーネントのクラス定義
 =============================================================================*/
 #ifndef ENEMY_BEHAVIOR_COMPONENT_H_
 #define	ENEMY_BEHAVIOR_COMPONENT_H_
 
 /*--- インクルードファイル ---*/
-#include "../BehaviorComponent.h"
+#include "../AIComponent.h"
 
 /*--- 構造体定義 ---*/
 
@@ -19,13 +19,13 @@
 /*-------------------------------------
 /* 敵AIのコンポーネント
 -------------------------------------*/
-class EnemyBehaviorComponent : public BehaviorComponent
+class EnemyAIComponent : public AIComponent
 {
 public:
-	EnemyBehaviorComponent(class GameObject* owner, int updateOrder = 100);
-	~EnemyBehaviorComponent(void);
+	EnemyAIComponent(class GameObject* owner, int updateOrder = 100);
+	~EnemyAIComponent(void);
 
-	virtual TypeID GetComponentType() const override { return TypeID::EnemyBehaviorComponent; };
+	virtual TypeID GetComponentType() const override { return TypeID::EnemyAIComponent; };
 
 
 private:

@@ -1,12 +1,12 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[BehaviorComponent.h] AIビヘイビアのベースコンポーネント
+/*	[AIComponent.h] AIビヘイビアのベースコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
 /*	説明：AIビヘイビアコンポーネントのベースになるクラス定義
 =============================================================================*/
-#ifndef BEHAVIOR_COMPONENT_H_
-#define	BEHAVIOR_COMPONENT_H_
+#ifndef AI_COMPONENT_H_
+#define	AI_COMPONENT_H_
 
 /*--- インクルードファイル ---*/
 #include "../Component.h"
@@ -19,19 +19,19 @@
 /*-------------------------------------
 /* AIビヘイビアコンポーネントのベースクラス
 -------------------------------------*/
-class BehaviorComponent : public Component
+class AIComponent : public Component
 {
 public:
-	BehaviorComponent(class GameObject* owner, int updateOrder = 100);
-	~BehaviorComponent(void);
+	AIComponent(class GameObject* owner, int updateOrder = 100);
+	~AIComponent(void);
 
-	virtual TypeID GetComponentType() const override { return TypeID::BehaviorComponent; };
+	virtual TypeID GetComponentType() const override { return TypeID::AIComponent; };
 
 private:
 protected:
 };
 
-#endif //BEHAVIOR_COMPONENT_H_
+#endif //AI_COMPONENT_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

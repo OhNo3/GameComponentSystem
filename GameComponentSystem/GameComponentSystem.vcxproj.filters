@@ -48,9 +48,6 @@
     <ClCompile Include="SourceFiles\Renderer.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -73,9 +70,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\CameraComponent.cpp">
@@ -114,6 +108,12 @@
     <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SourceFiles\GameProcess.h">
@@ -149,9 +149,6 @@
     <ClInclude Include="SourceFiles\Renderer.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -174,9 +171,6 @@
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\CameraComponent.h">
@@ -215,12 +209,15 @@
     <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="Cpp_CommentTemplate\Source.txt" />
     <Text Include="Cpp_CommentTemplate\Header.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

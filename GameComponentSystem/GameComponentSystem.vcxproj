@@ -163,9 +163,9 @@
     <ClCompile Include="SourceFiles\Renderer.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.cpp" />
-    <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.cpp" />
-    <ClCompile Include="SourceFiles\GameObjects\Component\BehaviorComponent.cpp" />
+    <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\ColliderComponent\CapsuleColliderComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\InputComponent\AutomaticInputComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.cpp" />
@@ -201,9 +201,9 @@
     <ClInclude Include="SourceFiles\Renderer.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.h" />
-    <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent\EnemyBehaviorComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.h" />
-    <ClInclude Include="SourceFiles\GameObjects\Component\BehaviorComponent.h" />
+    <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\ColliderComponent\CapsuleColliderComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\InputComponent\AutomaticInputComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.h" />
@@ -230,9 +230,6 @@
   <ItemGroup>
     <Text Include="Cpp_CommentTemplate\Source.txt" />
     <Text Include="Cpp_CommentTemplate\Header.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

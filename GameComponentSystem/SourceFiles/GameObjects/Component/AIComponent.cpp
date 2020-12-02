@@ -1,6 +1,6 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[BehaviorComponent.cpp] AIビヘイビアコンポーネントのベースコンポーネント
+/*	[AIComponent.cpp] AIビヘイビアコンポーネントのベースコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
 /*	説明：AIビヘイビアコンポーネントに共通する処理の定義
@@ -8,12 +8,12 @@
 
 /*--- インクルードファイル ---*/
 #include "../../StdAfx.h"
-#include "BehaviorComponent.h"
+#include "AIComponent.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
-BehaviorComponent::BehaviorComponent(GameObject* owner, int updateOrder)
+AIComponent::AIComponent(GameObject* owner, int updateOrder)
 	: Component(owner, updateOrder)
 {
 }
@@ -21,7 +21,7 @@ BehaviorComponent::BehaviorComponent(GameObject* owner, int updateOrder)
 /*-----------------------------------------------------------------------------
 /* デストラクタ
 -----------------------------------------------------------------------------*/
-BehaviorComponent::~BehaviorComponent(void)
+AIComponent::~AIComponent(void)
 {
 }
 
