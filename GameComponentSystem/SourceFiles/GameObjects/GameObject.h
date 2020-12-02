@@ -3,7 +3,7 @@
 /*	[GameObject.h] ゲームオブジェクトのベースクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：このクラスから継承・派生させて
+/*	説明：このクラスから継承・派生させてゲームオブジェクトを作成する
 =============================================================================*/
 #ifndef GAME_OBJECT_H_
 #define	GAME_OBJECT_H_
@@ -28,13 +28,11 @@ public:
 		//自分自身
 		, GameObject
 
-		//光源
-		, DirectionalLight 
-
 		//アクター(独立した役割を持つゲームオブジェクト)
-		, Player
-		, Enemy
 		, Camera
+		, Enemy
+		, Player
+
 
 		, MAX		//ゲームオブジェクトのIDの最大値
 	};
@@ -76,6 +74,9 @@ public:
 	virtual TypeID GetType(void) const { return TypeID::GameObject; } //後でoverrideできるように
 
 	const std::vector<class Component*>& GetComponents() const { return components_; }
+
+	class GameManager* GetGameManager(void) { return game_manager_; }
+
 
 private:
 	//GameObjectの所有者

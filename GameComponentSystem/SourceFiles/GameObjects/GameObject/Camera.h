@@ -3,7 +3,7 @@
 /*	[Camera.h] カメラのゲームオブジェクト
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：カメラのゲームオブジェクト、3D空間の表示に
+/*	説明：カメラのゲームオブジェクトのクラス定義
 =============================================================================*/
 #ifndef CAMERA_H_
 #define	CAMERA_H_
@@ -24,6 +24,8 @@ class Camera : public GameObject
 public:
 	Camera(class GameManager* gameManager);
 	~Camera(void);
+
+	void UpdateGameObject(float deltaTime) override;
 
 	virtual TypeID GetType(void) const { return TypeID::Camera; }
 

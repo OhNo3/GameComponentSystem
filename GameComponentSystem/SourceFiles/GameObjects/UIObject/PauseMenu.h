@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[SpringArmComponent.h] バネを持つアームのコンポーネント
+/*	[PauseMenu.h] ポーズメニュー画面クラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：バネ機能を持つオブジェクト同士を補間・追尾するアームのコンポーネント
+/*	説明：ポーズメニュー画面の挙動を定義したクラス
 =============================================================================*/
-#ifndef FOLLOW_ARM_COMPONENT_H_
-#define	FOLLOW_ARM_COMPONENT_H_
+#ifndef PAUSE_MENU_H_
+#define	PAUSE_MENU_H_
 
 /*--- インクルードファイル ---*/
-#include "../ArmComponent.h"
+#include "../UIObject.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,26 +17,28 @@
 
 
 /*-------------------------------------
-/* バネを持つアームのコンポーネント
+/* ポーズメニュー画面クラス
 -------------------------------------*/
-class SpringArmComponent : public ArmComponent
+class PauseMenu : public UIObject
 {
 public:
-	SpringArmComponent(class GameObject* owner, int updateOrder = 100);	//デフォルト引数で更新順を変更可
-	~SpringArmComponent(void);
+	PauseMenu(class GameManager* gameManager);
+	~PauseMenu(void);
 
 	void Init(void) override;
 	void Uninit(void) override;
 	void Input(void) override;
 	void Update(float deltaTime) override;
+	void Draw(void) override;
 
-	virtual TypeID GetComponentType() const override { return TypeID::SpringArmComponent; };
+	virtual TypeID GetType(void) const { return TypeID::PauseMenu; }
 
 private:
-protected:
+
 };
 
-#endif //FOLLOW_ARM_COMPONENT_H_
+
+#endif //PAUSE_MENU_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

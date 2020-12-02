@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[EnemyParamComponent.h] 敵パラメータのコンポーネント
+/*	[Result.h] リザルト画面クラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：敵パラメータに関する処理のクラス定義
+/*	説明：リザルト画面の挙動を定義したクラス
 =============================================================================*/
-#ifndef ENEMY_PARAM_COMPONENT_H_
-#define	ENEMY_PARAM_COMPONENT_H_
+#ifndef RESULT_H_
+#define	RESULT_H_
 
 /*--- インクルードファイル ---*/
-#include "../ActorParamComponent.h"
+#include "../UIObject.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,26 +17,28 @@
 
 
 /*-------------------------------------
-/* スタミナ値クラス
+/* リザルト画面クラス
 -------------------------------------*/
-class EnemyParamComponent : public ActorParamComponent
+class Result : public UIObject
 {
 public:
-	EnemyParamComponent(class GameObject* owner, int updateOrder = 100);	//デフォルト引数で更新順を変更可
-	~EnemyParamComponent(void);
+	Result(class GameManager* gameManager);
+	~Result(void);
 
 	void Init(void) override;
 	void Uninit(void) override;
 	void Input(void) override;
 	void Update(float deltaTime) override;
+	void Draw(void) override;
 
-	virtual TypeID GetComponentType() const override { return TypeID::EnemyParamComponent; };
+	virtual TypeID GetType(void) const { return TypeID::Result; }
 
 private:
-protected:
+
 };
 
-#endif //ENEMY_PARAM_COMPONENT_H_
+
+#endif //RESULT_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

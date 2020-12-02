@@ -22,7 +22,7 @@
 class RenderComponent : public Component
 {
 public:
-	RenderComponent(class GameObject* owner, int updateOrder = 100);
+	RenderComponent(class GameObject* owner, int drawOrder = 100);
 	~RenderComponent(void);
 
 	TypeID GetComponentType(void) const override { return TypeID::RenderComponent; }

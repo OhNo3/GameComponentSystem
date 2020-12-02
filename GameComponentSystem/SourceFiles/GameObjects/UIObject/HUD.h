@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[MeshComponent.h] 入力コンポーネントのベースコンポーネント
+/*	[HUD.h] ゲーム画面のHUDクラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：入力コンポーネントのコンポーネントのベースになるクラス定義
+/*	説明：ゲーム画面のHUDの挙動を定義したクラス
 =============================================================================*/
-#ifndef MESH_COMPONENT_H_
-#define	MESH_COMPONENT_H_
+#ifndef HUD_H_
+#define	HUD_H_
 
 /*--- インクルードファイル ---*/
-#include "../RenderComponent.h"
+#include "../UIObject.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,22 +17,28 @@
 
 
 /*-------------------------------------
-/* 入力コンポーネントのベースクラス
+/* ゲーム画面のHUDクラス
 -------------------------------------*/
-class MeshComponent : public RenderComponent
+class HUD : public UIObject
 {
 public:
-	MeshComponent(class GameObject* owner, int updateOrder = 100);
-	~MeshComponent(void);
+	HUD(class GameManager* gameManager);
+	~HUD(void);
 
-	TypeID GetComponentType(void) const override { return TypeID::MeshComponent; }
+	void Init(void) override;
+	void Uninit(void) override;
+	void Input(void) override;
+	void Update(float deltaTime) override;
+	void Draw(void) override;
+
+	virtual TypeID GetType(void) const { return TypeID::HUD; }
 
 private:
-protected:
+
 };
 
 
-#endif //RENDER_COMPONENT_H_
+#endif //HUD_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

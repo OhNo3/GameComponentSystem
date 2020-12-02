@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[EnemyBehaviorComponent.h]  敵AIビヘイビアのコンポーネント
+/*	[Title.h] タイトル画面クラス
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：敵AIビヘイビアコンポーネントのクラス定義
+/*	説明：タイトル画面の挙動を定義したクラス
 =============================================================================*/
-#ifndef ENEMY_BEHAVIOR_COMPONENT_H_
-#define	ENEMY_BEHAVIOR_COMPONENT_H_
+#ifndef TITLE_H_
+#define	TITLE_H_
 
 /*--- インクルードファイル ---*/
-#include "../BehaviorComponent.h"
+#include "../UIObject.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,21 +17,28 @@
 
 
 /*-------------------------------------
-/* 敵AIのコンポーネント
+/* タイトル画面クラス
 -------------------------------------*/
-class EnemyBehaviorComponent : public BehaviorComponent
+class Title : public UIObject
 {
 public:
-	EnemyBehaviorComponent(class GameObject* owner, int updateOrder = 100);
-	~EnemyBehaviorComponent(void);
+	Title(class GameManager* gameManager);
+	~Title(void);
 
-	virtual TypeID GetComponentType() const override { return TypeID::EnemyBehaviorComponent; };
+	void Init(void);
+	void Uninit(void);
+	void Input(void);
+	void Update(float deltaTime);
+	void Draw(void);
 
+	virtual TypeID GetType(void) const { return TypeID::Title; } 
 
 private:
+
 };
 
-#endif //ENEMY_BEHAVIOR_COMPONENT_H_
+
+#endif //TITLE_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

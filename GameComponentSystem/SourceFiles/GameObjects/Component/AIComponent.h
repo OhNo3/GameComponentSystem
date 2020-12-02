@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[PlayerParamComponent.h] 自機パラメータのコンポーネント
+/*	[AIComponent.h] AIビヘイビアのベースコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：自機パラメータに関する処理のクラス定義
+/*	説明：AIビヘイビアコンポーネントのベースになるクラス定義
 =============================================================================*/
-#ifndef PLAYER_PARAM_COMPONENT_H_
-#define	PLAYER_PARAM_COMPONENT_H_
+#ifndef AI_COMPONENT_H_
+#define	AI_COMPONENT_H_
 
 /*--- インクルードファイル ---*/
-#include "../ActorParamComponent.h"
+#include "../Component.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,26 +17,21 @@
 
 
 /*-------------------------------------
-/* 自機パラメータのコンポーネント
+/* AIビヘイビアコンポーネントのベースクラス
 -------------------------------------*/
-class PlayerParamComponent : public ActorParamComponent
+class AIComponent : public Component
 {
 public:
-	PlayerParamComponent(class GameObject* owner, int updateOrder = 100);	//デフォルト引数で更新順を変更可
-	~PlayerParamComponent(void);
+	AIComponent(class GameObject* owner, int updateOrder = 100);
+	~AIComponent(void);
 
-	void Init(void) override;
-	void Uninit(void) override;
-	void Input(void) override;
-	void Update(float deltaTime) override;
-
-	virtual TypeID GetComponentType() const override { return TypeID::PlayerParamComponent; };
+	virtual TypeID GetComponentType() const override { return TypeID::AIComponent; };
 
 private:
 protected:
 };
 
-#endif //PLAYER_PARAM_COMPONENT_H_
+#endif //AI_COMPONENT_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/

@@ -1,9 +1,26 @@
-#pragma once
+/*=============================================================================
+/*-----------------------------------------------------------------------------
+/*	[UIObject.h] UIオブジェクトのベースクラス
+/*	Author：Kousuke,Ohno.
+/*-----------------------------------------------------------------------------
+/*	説明：このクラスから継承・派生させてUIオブジェクトを作成する
+=============================================================================*/
+#ifndef UI_OBJECT_H_
+#define	UI_OBJECT_H_
 
+/*--- インクルードファイル ---*/
+#include "../StdAfx.h"
+
+/*--- 構造体定義 ---*/
+
+/*--- クラスの前方宣言 ---*/
+
+
+/*-------------------------------------
+/* UIオブジェクトのベースクラス
+-------------------------------------*/
 class UIObject
 {
-public:
-
 public:
 	enum class TypeID
 	{
@@ -11,9 +28,13 @@ public:
 		//自分自身
 		, UIObject
 
+		//UIObject
+		, HUD
+		, PauseMenu
+		, Result
+		, Title
 
-
-		, MAX		//ゲームオブジェクトのIDの最大値
+		, MAX		//UIオブジェクトのIDの最大値
 	};
 
 	//ゲームオブオブジェクトが所有する型のID
@@ -22,9 +43,8 @@ public:
 	enum class State
 	{
 		None = -1
-		, Active	//活動するゲームオブジェクトか？
-		, Paused	//停止するゲームオブジェクトか？
-		, Dead		//死ぬゲームオブジェクトか？
+		, Active	//活動するUIオブジェクトか？
+		, Closing	//停止するUIオブジェクトか？
 
 		, MAX		//状態の最大値
 	};
@@ -33,40 +53,28 @@ public:
 	UIObject(class GameManager* gameManager);
 	virtual ~UIObject(void);
 
-	void Init(void);
-	void Uninit(void);
-	void Input(void);
-	virtual void InputGameObject(void);	//後でoverrideできるように
-	void Update(float deltaTime);
-	void UpdateComponents(float deltaTime);
-	virtual void UpdateGameObject(float deltaTime);	//後でoverrideできるように
+	virtual void Init(void);
+	virtual void Uninit(void);
+	virtual void Input(void);
+	virtual void Update(float deltaTime);
+	virtual void Draw(void);
 
-	void AddComponent(class Component* component);
-	void RemoveComponent(class Component* component);
+	void Close(void) { state_ = State::Closing; }
 
 	void SetState(State state) { state_ = state; };
 	State GetState(void) { return state_; }
 
 	virtual TypeID GetType(void) const { return TypeID::UIObject; } //後でoverrideできるように
 
-	const std::vector<class Component*>& GetComponents() const { return components_; }
+protected:
+	//UIObjectの所有者
+	class GameManager*				game_manager_;
 
-private:
-	//GameObjectの所有者
-	class GameManager* game_manager_;
-
-	//GameObjectの状態
+	//UIObjectの状態
 	State							state_;
-
-	//姿勢制御コンポーネント
-	class TransformComponent* transform_components_;
-
-	//姿勢情報を再計算するか
-	bool							re_compute_transform_;
-
-	//所有コンポーネント
-	std::vector<class Component*>	components_;
-
-private:
 };
 
+#endif //UI_OBJECT_H_
+/*=============================================================================
+/*		End of File
+=============================================================================*/

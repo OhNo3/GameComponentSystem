@@ -1,27 +1,27 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[ParameterComponent.cpp] パラメータ値のベースコンポーネント
+/*	[EnemyAIComponent.cpp] 敵AIのコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：各パラメータ値のベースとなる親クラスの定義
+/*	説明：敵AIコンポーネントの処理を定義
 =============================================================================*/
 
 /*--- インクルードファイル ---*/
 #include "../../../StdAfx.h"
-#include "ParameterComponent.h"
+#include "EnemyAIComponent.h"
 
 /*-----------------------------------------------------------------------------
 /* コンストラクタ
 -----------------------------------------------------------------------------*/
-ParameterComponent::ParameterComponent(GameObject* owner, int updateOrder)
-	: ActorParamComponent(owner, updateOrder)
+EnemyAIComponent::EnemyAIComponent(GameObject* owner, int updateOrder)
+	: AIComponent(owner, updateOrder)
 {
 }
 
 /*-----------------------------------------------------------------------------
 /* デストラクタ
 -----------------------------------------------------------------------------*/
-ParameterComponent::~ParameterComponent(void)
+EnemyAIComponent::~EnemyAIComponent(void)
 {
 }
 

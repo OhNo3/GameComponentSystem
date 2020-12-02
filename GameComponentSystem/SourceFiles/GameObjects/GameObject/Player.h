@@ -3,7 +3,7 @@
 /*	[Player.h] プレイヤーのゲームオブジェクト
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：
+/*	説明：プレイヤーのゲームオブジェクトクラス定義
 =============================================================================*/
 #ifndef PLAYER_H_
 #define	PLAYER_H_
@@ -17,7 +17,7 @@
 
 
 /*-------------------------------------
-/* クラス
+/* プレイヤーのゲームオブジェクトクラス
 -------------------------------------*/
 class Player : public GameObject
 {
@@ -25,11 +25,12 @@ public:
 	Player(class GameManager* gameManager);
 	~Player(void);
 
+	void UpdateGameObject(float deltaTime) override;
+
 	TypeID GetType(void) const override { return TypeID::Player; }
 
 private:
-
-
+	class SpriteComponent* sprite_;
 };
 
 #endif //PLAYER_H_

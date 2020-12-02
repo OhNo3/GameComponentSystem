@@ -1,15 +1,15 @@
 /*=============================================================================
 /*-----------------------------------------------------------------------------
-/*	[ParameterComponent.h] パラメータ値のベースコンポーネント
+/*	[EnemyAIComponent.h]  敵AIのコンポーネント
 /*	Author：Kousuke,Ohno.
 /*-----------------------------------------------------------------------------
-/*	説明：各パラメータ値のベースとなる親クラスの定義
+/*	説明：敵AIコンポーネントのクラス定義
 =============================================================================*/
-#ifndef PARAMETER_COMPONENT_H_
-#define	PARAMETER_COMPONENT_H_
+#ifndef ENEMY_BEHAVIOR_COMPONENT_H_
+#define	ENEMY_BEHAVIOR_COMPONENT_H_
 
 /*--- インクルードファイル ---*/
-#include "../ActorParamComponent.h"
+#include "../AIComponent.h"
 
 /*--- 構造体定義 ---*/
 
@@ -17,21 +17,21 @@
 
 
 /*-------------------------------------
-/* パラメータ値のベースコンポーネント
+/* 敵AIのコンポーネント
 -------------------------------------*/
-class ParameterComponent : public ActorParamComponent
+class EnemyAIComponent : public AIComponent
 {
 public:
-	ParameterComponent(class GameObject* owner, int updateOrder = 100);	//デフォルト引数で更新順を変更可
-	~ParameterComponent(void);
+	EnemyAIComponent(class GameObject* owner, int updateOrder = 100);
+	~EnemyAIComponent(void);
 
-	virtual TypeID GetComponentType() const override { return TypeID::ParameterComponent; };
+	virtual TypeID GetComponentType() const override { return TypeID::EnemyAIComponent; };
+
 
 private:
-protected:
 };
 
-#endif //PARAMETER_COMPONENT_H_
+#endif //ENEMY_BEHAVIOR_COMPONENT_H_
 /*=============================================================================
 /*		End of File
 =============================================================================*/
