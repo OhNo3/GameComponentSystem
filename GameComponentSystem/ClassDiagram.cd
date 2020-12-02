@@ -1,0 +1,207 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PauseMenu" Collapsed="true">
+    <Position X="0.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAgAQgABAAAAAAAAEAAAAAEAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\UIObject\PauseMenu.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="HUD" Collapsed="true">
+    <Position X="2.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQQAAAAAAAAAAgABAAAAAAAAECAAAAEAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\UIObject\HUD.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Result" Collapsed="true">
+    <Position X="5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgABAAAAAAQAEAAAAAEAAAACBAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\UIObject\Result.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AudioComponent" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\AudioComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Renderer" Collapsed="true">
+    <Position X="23.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAgAAAAgAQAAAAAAAAAEAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\Renderer.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FallowCameraComponent" Collapsed="true">
+    <Position X="19" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIEAAAAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EnemyAIComponent" Collapsed="true">
+    <Position X="10" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAAAAAAAAAAAAAAAABAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MoveComponent" Collapsed="true">
+    <Position X="7.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AIComponent" Collapsed="true">
+    <Position X="10" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAABAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\AIComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapsuleColliderComponent" Collapsed="true">
+    <Position X="16.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAQAAAABAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\ColliderComponent\CapsuleColliderComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="AutomaticInputComponent" Collapsed="true">
+    <Position X="1" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABQAAAAAAAAAAAABAAAAAAABEAAAAAAAAAACAAAAQAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\InputComponent\AutomaticInputComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PlayerInputComponent" Collapsed="true">
+    <Position X="3.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAABAIAAABAAAAAAABEAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="InputComponent" Collapsed="true">
+    <Position X="2.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAAAAAABAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\InputComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Camera" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAQAAAAAIAAAAAAAEAAAAABAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\GameObject\Camera.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Enemy" Collapsed="true">
+    <Position X="2.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAACgAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\GameObject\Enemy.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Player" Collapsed="true">
+    <Position X="5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAAAAAAAAIAAAAAAAEAAAAAAQAAABA=</HashCode>
+      <FileName>SourceFiles\GameObjects\GameObject\Player.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColliderComponent" Collapsed="true">
+    <Position X="15.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAABAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\ColliderComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraComponent" Collapsed="true">
+    <Position X="19" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAIIABAAAAAAABEAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\CameraComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Component" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQhAAAAEYAAhIABAAAAAAABEAAAAAAAAABCAEAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="DataLoad" Collapsed="true">
+    <Position X="21.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAICAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\SubSystem\DataLoad.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameManager" Collapsed="true">
+    <Position X="23.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AARiAAAAAAAICACAAAQEAAAAAAQAgGAEAAAAAAFQigo=</HashCode>
+      <FileName>SourceFiles\GameManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameObject" Collapsed="true">
+    <Position X="2.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CBQABEAAAAQIAAABAAAgAIIgEgAQAAEEAAACAAIgBIA=</HashCode>
+      <FileName>SourceFiles\GameObjects\GameObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="UIObject" Collapsed="true">
+    <Position X="3.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQgBEAAAAAAAgABAAAgAAAAEAQAAAEEAAACAACABAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\UIObject.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="GameProcess" Collapsed="true">
+    <Position X="21.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAAEAAAABAAAAAAAAAAAgIAAAAAACAQAABAY=</HashCode>
+      <FileName>SourceFiles\GameProcess.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RenderComponent" Collapsed="true">
+    <Position X="5.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABAAAQAAAAAAAAAAAAgAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\RenderComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TransformComponent" Collapsed="true">
+    <Position X="7.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAFAAAAABAAAAAAABEAAAAAAAAAACAAAIAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\TransformComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SphereColliderComponent" Collapsed="true">
+    <Position X="14.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAIAAAAAAAJAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\ColliderComponent\SphereColliderComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SpriteComponent" Collapsed="true">
+    <Position X="5.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAoAAAAEAAAABIAAAAAAAABAIAQAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Title" Collapsed="true">
+    <Position X="7.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAkABAAAAAAAAEAABAAEAAAACAAAAAAA=</HashCode>
+      <FileName>SourceFiles\GameObjects\UIObject\Title.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

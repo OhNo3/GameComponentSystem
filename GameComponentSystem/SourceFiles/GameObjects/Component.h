@@ -32,7 +32,6 @@ public:
 		, EnemyAIComponent
 		//‰¹º
 		, AudioComponent
-		, BGMCompoenent
 		//ƒJƒƒ‰
 		, CameraComponent
 		, FollowCameraComponent

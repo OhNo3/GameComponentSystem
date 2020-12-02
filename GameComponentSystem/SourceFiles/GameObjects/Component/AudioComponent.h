@@ -22,7 +22,7 @@
 class AudioComponent : public Component
 {
 public:
-	AudioComponent(class GameObject* owner, int updateOrder);
+	AudioComponent(class GameObject* owner, int updateOrder = 100);
 	~AudioComponent(void);
 
 private:

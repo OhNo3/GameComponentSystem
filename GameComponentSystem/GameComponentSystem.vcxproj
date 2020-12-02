@@ -155,13 +155,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\UIObject\PauseMenu.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\UIObject\HUD.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\UIObject\Result.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent.cpp" />
     <ClCompile Include="SourceFiles\Renderer.cpp" />
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.cpp" />
     <ClCompile Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.cpp" />
@@ -193,13 +191,11 @@
     <ClCompile Include="SourceFiles\GameObjects\UIObject\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\UIObject\PauseMenu.h" />
     <ClInclude Include="SourceFiles\GameObjects\UIObject\HUD.h" />
     <ClInclude Include="SourceFiles\GameObjects\UIObject\Result.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent.h" />
     <ClInclude Include="SourceFiles\Renderer.h" />
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\CameraComponent\FallowCameraComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent\EnemyAIComponent.h" />
     <ClInclude Include="SourceFiles\GameObjects\Component\TransformComponent\MoveComponent.h" />
@@ -230,6 +226,9 @@
   <ItemGroup>
     <Text Include="Cpp_CommentTemplate\Source.txt" />
     <Text Include="Cpp_CommentTemplate\Header.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

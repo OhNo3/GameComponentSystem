@@ -19,7 +19,6 @@ const char* Component::ComponentTypeNames[static_cast<int>(TypeID::MAX)] = {
 	, "EnemyAIComponent"
 	//âπê∫
 	, "AudioComponent"
-	, "BGMCompoenent"
 	//ÉJÉÅÉâ
 	, "CameraComponent"
 	, "FollowCameraComponent"

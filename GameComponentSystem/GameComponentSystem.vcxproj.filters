@@ -63,9 +63,6 @@
     <ClCompile Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\RenderComponent\SpriteComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
@@ -103,9 +100,6 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\UIObject\PauseMenu.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="SourceFiles\GameObjects\Component\AIComponent.cpp">
@@ -164,9 +158,6 @@
     <ClInclude Include="SourceFiles\GameObjects\Component\InputComponent\PlayerInputComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\MeshComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\RenderComponent\SpriteComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -206,9 +197,6 @@
     <ClInclude Include="SourceFiles\GameObjects\UIObject\PauseMenu.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="SourceFiles\GameObjects\Component\AudioComponent\BGMComponent.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="SourceFiles\GameObjects\Component\AIComponent.h">
       <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
@@ -219,5 +207,8 @@
   <ItemGroup>
     <Text Include="Cpp_CommentTemplate\Source.txt" />
     <Text Include="Cpp_CommentTemplate\Header.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>
